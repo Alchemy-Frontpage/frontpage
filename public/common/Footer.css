@@ -1,0 +1,8 @@
+footer nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer nav a {
+    text-decoration: none;
+}
