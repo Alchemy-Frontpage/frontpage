@@ -19,7 +19,24 @@ async function run() {
     
         // run a query to create tables
         await client.query(`
-          
+            CREATE TABLE users (
+                id SERIAL PRIMARY KEY NOT NULL,
+                email VARCHAR(256) NOT NULL,
+                hash VARCHAR(512) NOT NULL
+            );
+
+            CREATE TABLE favorites (
+                id SERIAL PRIMARY KEY NOT NULL,
+                user_id INTEGER NOT NULL REFERENCES users(id),
+                source_name VARCHAR(256) NOT NULL,
+                author VARCHAR(256) NOT NULL,
+                title VARCHAR(512) NOT NULL,
+                description VARCHAR(512) NOT NULL,
+                link VARCHAR(999) NOT NULL,
+                image VARCHAR(999) NOT NULL,
+                date VARCHAR(256) NOT NULL,
+                content VARCHAR(512) NOT NULL
+            );
         `);
 
         console.log('create tables complete');
