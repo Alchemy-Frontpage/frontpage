@@ -9,8 +9,8 @@ const superagent = require('superagent');
 
 // Database Client
 // (create and connect using DATABASE_URL)
-// const client = require('./lib/client');
-// client.connect();
+const client = require('./lib/client');
+client.connect();
 
 // Application Setup
 const app = express();
