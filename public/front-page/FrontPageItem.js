@@ -3,7 +3,7 @@ import Component from '../Component.js';
 class FrontPageItem extends Component {
 
     onRender(dom) {
-        const frontPageItem = this.props.frontPageItem;
+        const frontPageItem = this.props.item;
         const onKeep = this.props.onKeep;
         const onRemove = this.props.onRemove;
 
