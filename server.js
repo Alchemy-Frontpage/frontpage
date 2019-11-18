@@ -9,8 +9,8 @@ const superagent = require('superagent');
 
 // Database Client
 // (create and connect using DATABASE_URL)
-const client = require('./lib/client');
-client.connect();
+// const client = require('./lib/client');
+// client.connect();
 
 // Application Setup
 const app = express();
@@ -23,10 +23,11 @@ app.use(express.json());
 
 
 // API Routes
-app.get('api/news', async (req, res) => {
+app.get('/api/news', async (req, res) => {
     try {
         let news = await superagent.get('https://newsapi.org/v2/top-headlines?language=en').set(`X-Api-Key`, `${NEWS_API_KEY}`);
-        res.status(200).json(news.articles);
+        let newsObj = JSON.parse(news.text);
+        res.status(200).json(newsObj.articles);
     }
     catch (err){
         res.status(500).json(err);
