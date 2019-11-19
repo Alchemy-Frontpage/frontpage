@@ -31,7 +31,7 @@ async function run() {
                 source_name VARCHAR(256) NOT NULL,
                 author VARCHAR(256) NOT NULL,
                 title VARCHAR(512) NOT NULL,
-                description VARCHAR(512) NOT NULL,
+                description VARCHAR(512),
                 link VARCHAR(999) NOT NULL,
                 image VARCHAR(999) NOT NULL,
                 date VARCHAR(256) NOT NULL,
