@@ -4,7 +4,7 @@ class FrontPageItem extends Component {
 
     onRender(dom) {
         const frontPageItem = this.props.item;
-        const onKeep = this.props.onKeep;
+        const onKeep = this.props.onFavorite;
         const onRemove = this.props.onRemove;
 
 
