@@ -55,7 +55,7 @@ app.post('/api/favorites', async (req, res) => {
                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
                 RETURNING *
         `,
-        [user, newArticle.source_name, newArticle.author, newArticle.title, newArticle.description, newArticle.link, newArticle.image, newArticle.date, newArticle.content]
+        [user, newArticle.source.name, newArticle.author, newArticle.title, newArticle.description, newArticle.url, newArticle.urlToImage, newArticle.publishedAt, newArticle.content]
         );
         res.status(200).json(result.rows[0]);
     }
