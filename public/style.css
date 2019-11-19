@@ -1,0 +1,43 @@
+body, html {
+    font-family: 'News Cycle', sans-serif;
+    background-color: #0e5883;
+    height: 100vw;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+h1 {
+    font-family: 'Calistoga', cursive;
+}
+
+
+
+/* 
+
+Colors
+
+light blue - #0075b8
+dark blue - #0e5883
+green - #27a16c
+yellow - #d2ec48
+orange - #ee5331
+
+
+Fonts
+
+font-family: 'News Cycle', sans-serif; (body)
+font-family: 'Calistoga', cursive; (headings)
+
+
+font link for html page
+
+<link href="https://fonts.googleapis.com/css?family=Calistoga|News+Cycle&display=swap" rel="stylesheet">
+
+*/

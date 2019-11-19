@@ -2,6 +2,7 @@ import Component from '../Component.js';
 import Header from '../common/Header.js';
 import SignUp from './SignUp.js';
 import SignIn from './SignIn.js';
+import Footer from '../common/Footer.js';
 import { signUp as userSignUp, signIn as userSignIn } from '../services/domain-api.js';
 
 function success(user) {
@@ -10,6 +11,7 @@ function success(user) {
     const searchParams = new URLSearchParams(location.search);
     location = searchParams.get('redirect') || '../front-page/front-page.html';
 }
+
 
 class App extends Component {
 
@@ -74,6 +76,9 @@ class App extends Component {
             signUpContainer.classList.remove('no-display');
             signInContainer.classList.add('no-display');
         });
+
+        const footer = new Footer();
+        dom.appendChild(footer.renderDOM());
     }
 
     renderHTML() {
@@ -116,6 +121,7 @@ class App extends Component {
                         <!-- SignIn goes here -->
                     </section>
                 </main>
+                <!-- footer goes here -->
             </div>
         `;
     }
