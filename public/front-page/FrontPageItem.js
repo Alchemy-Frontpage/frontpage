@@ -27,7 +27,8 @@ class FrontPageItem extends Component {
     }
 
     renderHTML() {
-        const frontPageItem = this.props.frontPageItem;
+        const frontPageItem = this.props.item;
+        console.log(frontPageItem);
 
         return /*html*/`
             <li class = "front-page-item">

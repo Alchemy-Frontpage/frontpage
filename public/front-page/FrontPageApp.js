@@ -43,7 +43,7 @@ class FrontPageApp extends Component {
         // main.appendChild(newTodo.renderDOM());
         
         const frontPageList = new FrontPageList({ 
-            newsItems: [],
+            frontPageItems: [],
 
             // onRemove: async todo => {
             //     loading.update({ loading: true });
@@ -80,7 +80,7 @@ class FrontPageApp extends Component {
             
         }
         catch (err) {
-            console.log('Update todos failed\n', err);
+            console.log('Update News List failed\n', err);
         }
         // finally {
         //     loading.update({ loading: false });
