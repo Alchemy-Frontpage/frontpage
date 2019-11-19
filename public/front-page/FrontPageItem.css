@@ -5,6 +5,18 @@
     box-shadow: 2px 2px 7px 1px;
     border-radius: 5px;
     padding: 1rem;
+    position: absolute;
+    height: 600px;
+    overflow: hidden;
+    background: white;
+    margin: 0 auto;
+    transition: 1s;
+}
+
+.card:hover {
+    transform: translateX(100vw);
+    opacity: 0;
+
 }
 
 .author,
