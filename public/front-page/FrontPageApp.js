@@ -11,14 +11,14 @@ class FrontPageApp extends Component {
     async onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
-        
+
         const main = dom.querySelector('main');
         // const error = dom.querySelector('.error');
-        
+
         // const loading = new Loading({ loading: true });
         // dom.appendChild(loading.renderDOM());
-        
-        // const newTodo = new AddTodo({ 
+
+        // const newTodo = new AddTodo({
         //     onAdd: async todo => {
         //         loading.update({ loading: true });
         //         error.textContent = '';
@@ -39,11 +39,11 @@ class FrontPageApp extends Component {
         //             loading.update({ loading: false });
         //         }
         //     }
-            
+
         // });
         // main.appendChild(newTodo.renderDOM());
-        
-        const frontPageList = new FrontPageList({ 
+
+        const frontPageList = new FrontPageList({
             frontPageItems: [],
 
             // onRemove: async todo => {
@@ -68,8 +68,8 @@ class FrontPageApp extends Component {
             //         loading.update({ loading: false });
             //     }
             // }
-        
-        
+
+
         });
         main.appendChild(frontPageList.renderDOM());
         // initial todo load:
@@ -78,9 +78,8 @@ class FrontPageApp extends Component {
             this.state.frontPageItems = frontPageItems;
 
             frontPageList.update({ frontPageItems });
-            
-        }
-        catch (err) {
+
+        } catch (err) {
             console.log('Update News List failed\n', err);
         }
         // finally {
@@ -93,12 +92,12 @@ class FrontPageApp extends Component {
     }
 
     renderHTML() {
-        return /*html*/`
+        return /*html*/ `
             <div>
                 <!-- header goes here -->
                 <!-- show errors: -->
                 <p class="error"></p>
-                <main class="grid-container">
+                <main class="cards-container">
                     <!-- add todo goes here -->
                     <!-- todo list goes here -->
                 </main>

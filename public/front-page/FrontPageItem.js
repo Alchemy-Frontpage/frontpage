@@ -10,12 +10,12 @@ class FrontPageItem extends Component {
 
         const keepButton = dom.querySelector('.keep-button');
         keepButton.addEventListener('click', () => {
-            
+
             //What functionality do we want to inlude here?
 
             onKeep(frontPageItem);
 
-            
+
         });
 
         const removeButton = dom.querySelector('.remove-button');
@@ -30,8 +30,8 @@ class FrontPageItem extends Component {
         const frontPageItem = this.props.item;
         console.log(frontPageItem);
 
-        return /*html*/`
-            <li class = "front-page-item">
+        return /*html*/ `
+            <li class = "card">
                 <h1 class="headline">${frontPageItem.title}</h1>
                 <img src="${frontPageItem.urlToImage}" alt="">
                 <div class="byline">
