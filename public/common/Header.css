@@ -1,42 +1,87 @@
-h1 {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .navbar_header {
+    font-size: 2rem;
+    color: #27a16c;
     text-align: center;
+    background: #0075b8;
     text-transform: capitalize;
-    font-size: 4rem;
-}
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-  position: relative;
-}
-.topnav .myLinks {
-  display: none;
-}
-a.single {
-    transition: all 0.5s ease;
-}
-.topnav a {
-  color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: #ee5331;
+  }
+  .navbar_btn {
+    align-self: center;
+    border: 3px solid #ee5331;
+    cursor: pointer;
+    background: #0e5883;
+  }
+  .navbar_links {
+    list-style: none;
+    transition: all 1s ease;
+  }
+  .single-link {
+    display: block;
+    background: #0e5883;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #27a16c;
+  }
+  .single-link:hover {
+    padding-left: 1.5rem;
+    color: #d2ec48;
+    background: #0075b8;
+  }
+  .show {
+   visibility: hidden;
+  }
+  button {
+    width: 2rem;
+    background: #ee5331;
+    font-size: 1rem;
+    border: 2px solid #ee5331;
+    outline: none;
+  }
   
-  padding: 14px 16px;
-  text-decoration: none;
-  text-transform: capitalize;
-  font-size: 1.5rem;
-  display: block;
-}
-.topnav a.icon {
-  background: black;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.topnav a:hover {
- padding-left: 10px;
-  background-color: #ddd;
-  color: black;
-}
-.active {
-  background-color: hsla(41, 100%, 50%, 1);
-  color:black;
   
-}
+  /* 
+light blue - #0075b8
+dark blue - #0e5883
+green - #27a16c
+yellow - #d2ec48
+orange - #ee5331
+
+ */
+  /* <header>
+           <nav class = "navbar">
+           <div class="navbar_header">Front Page: Swiping the hottest news
+           <div class="navbar_btn">
+                    <i class="fa fa-bars"></i>
+                </a>
+           </div>
+           </div>
+           <ul class="navbar_links">
+              <li>
+                    <a href="#" class="single-link">Favorites
+                       <i class="fas fa-heart"></i>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#" class="single-link">Front Page
+                        <i class="fas fa-home"></i>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="#" class="single-link">About Us
+                       <i class="fas fa-users"></i>
+                    </a>
+                    </li>
+               </ul>
+               </nav>
+        </header> */
