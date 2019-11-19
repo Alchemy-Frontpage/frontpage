@@ -80,6 +80,22 @@ app.get('/api/favorites', async (req, res) => {
         console.log(err);
     }
 });
+
+app.delete('/api/favorites/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const result = await client.query(`
+            DELETE FROM favorites
+            WHERE favorites.id = $1
+            RETURNING *
+        `, [id]);
+        res.status(200).json(result.rows[0]);
+    }
+    catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
 // http method and path...
 
 
