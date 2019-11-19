@@ -8,7 +8,7 @@ function success(user) {
     localStorage.setItem('TOKEN', user.token);
     localStorage.setItem('USER', user.displayName);
     const searchParams = new URLSearchParams(location.search);
-    location = searchParams.get('redirect') || './todo.html';
+    location = searchParams.get('redirect') || '../front-page/front-page.html';
 }
 
 class App extends Component {
