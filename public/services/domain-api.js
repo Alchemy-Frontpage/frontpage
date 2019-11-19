@@ -72,7 +72,7 @@ export function keepNewsItem(frontPageItem) {
     
 }
 
-export function removeNewsItem(id) {  
+export function deleteFavorite(id) {  
     const url = `${URL}/news/${id}`;
     return fetchWithError(url, {
         method: 'DELETE'
