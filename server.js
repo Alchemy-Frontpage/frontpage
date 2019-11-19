@@ -25,9 +25,22 @@ app.use(express.json());
 // API Routes
 app.get('/api/news', async (req, res) => {
     try {
-        let news = await superagent.get('https://newsapi.org/v2/top-headlines?language=en').set(`X-Api-Key`, `${NEWS_API_KEY}`);
-        let newsObj = JSON.parse(news.text);
-        res.status(200).json(newsObj.articles);
+        let rawNews = await superagent.get('https://newsapi.org/v2/top-headlines?language=en').set(`X-Api-Key`, `${NEWS_API_KEY}`);
+        const news = JSON.parse(rawNews.text).articles;
+        console.log(news);
+        
+        const titleLookup = news.reduce((acc, curr) => {
+            if (!acc[curr.title]) {
+                acc[curr.title] = curr;
+            } 
+            return acc;
+
+        }, {});
+
+        const deduplicatedTitles = Object.values(titleLookup);
+
+
+        res.status(200).json(deduplicatedTitles);
     }
     catch (err){
         res.status(500).json(err);
