@@ -13,12 +13,12 @@ class Header extends Component {
     }
     
     renderHTML() {
-        const title = this.props.title || 'Front Page';
+        // const title = this.props.title || 'Front Page';
         
         return /*html*/ `
             <header>
             <div class="topnav">
-                <a href="#home" class="active">Swipping for the hottest news story</a>
+                <a href="#home" class="active">Swiping for the hottest news</a>
                 <div class="myLinks">
                     <a href="#" class="single">Favorites
                         <i class="far fa-heart"></i>
@@ -34,7 +34,7 @@ class Header extends Component {
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-            <h1>${title}</h1>
+            <h1></h1>
         </header>
 </header>
         `;
