@@ -94,3 +94,9 @@ export function getFavorites() {
     const url = `${URL}/favorites`;
     return fetchWithError(url);
 }
+
+export function getFavorite(id) {
+    const url = `${URL}/favorites/${id}`;
+    return fetchWithError(url);
+    
+}
