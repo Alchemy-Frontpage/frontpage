@@ -1,0 +1,68 @@
+li {
+    list-style: none;
+}
+
+ul {
+    display: grid;
+    grid-template-rows: auto;
+    width: 75%;
+    margin: auto;
+}
+
+body, html {
+    font-family: 'News Cycle', sans-serif;
+}
+
+h1 {
+    font-family: 'Calistoga', cursive;
+    font-size: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.byline {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* 
+HTML
+
+<div>
+    <!-- header goes here -->
+    <!-- show errors: -->
+    <p class="error"></p>
+    <main class="grid-container">
+        <div class='list-container'>
+            <ul class="front-page-list">
+                <li class = "front-page-item">
+                    <h1 class="headline">${frontPageItem.title}</h1>
+                    <img src="${frontPageItem.urlToImage}" alt="">
+                    <p class="byline">${frontPageItem.author}</p>
+                    <p class="source">${frontPageItem.source.name}</p>
+                    <p class="summary">${frontPageItem.description}</p>
+                    <div class="buttons">
+                        <button class="remove-button">Remove</button>
+                        <button class="keep-button">Keep</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+
+
+*/

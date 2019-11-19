@@ -34,11 +34,15 @@ class FrontPageItem extends Component {
             <li class = "front-page-item">
                 <h1 class="headline">${frontPageItem.title}</h1>
                 <img src="${frontPageItem.urlToImage}" alt="">
-                <p class="byline">${frontPageItem.author}</p>
-                <p class="source">${frontPageItem.source.name}</p>
+                <div class="byline">
+                    <p class="author">${frontPageItem.author}</p>
+                    <p class="source">${frontPageItem.source.name}</p>
+                </div>
                 <p class="summary">${frontPageItem.description}</p>
-                <button class="remove-button">Remove</button>
-                <button class="keep-button">Keep</button>
+                <div class="buttons">
+                    <button class="remove-button">Remove</button>
+                    <button class="keep-button">Keep</button>
+                </div>
             </li>
 
 

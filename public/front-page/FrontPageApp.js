@@ -8,7 +8,7 @@ import { getFrontPage } from '../services/domain-api.js';
 class FrontPageApp extends Component {
 
     async onRender(dom) {
-        const header = new Header({ title: 'My News' });
+        const header = new Header();
         dom.prepend(header.renderDOM());
         
         const main = dom.querySelector('main');
