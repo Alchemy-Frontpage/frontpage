@@ -5,12 +5,12 @@ class FrontPageList extends Component {
     
     onRender(dom) {
         const frontPageItems = this.props.frontPageItems;
-        const onKeep = this.props.onKeep;
+        const onFavorite = this.props.onKeep;
         const onRemove = this.props.onRemove;
         const list = dom.querySelector('.front-page-list');
 
         frontPageItems.forEach(item => {
-            const frontPageItem = new FrontPageItem({ item, onKeep, onRemove });
+            const frontPageItem = new FrontPageItem({ item, onFavorite, onRemove });
             list.appendChild(frontPageItem.renderDOM());
         });
 
