@@ -3,8 +3,7 @@ import Header from '../common/Header.js';
 import Footer from '../common/Footer.js';
 import FilterBar from '../filter/Filter.js';
 import FavoriteList from '../front-page/FrontPageList.js';
-import deleteFavorite from '../services/domain-api.js';
-import getFavorites from '../services/domain-api.js';
+import { deleteFavorite, getFavorites } from '../services/domain-api.js';
 
 class FavPageApp extends Component {
     async onRender(dom) {
@@ -44,4 +43,4 @@ class FavPageApp extends Component {
     }
 }
 
-export default FavPageApp
+export default FavPageApp;
