@@ -20,13 +20,15 @@ class FavPageApp extends Component {
             onDelete: async favoriteToRemove => {
                 try {
                     deleteFavorite(favoriteToRemove);
+                    favoriteList.update();
                 }
                 catch (err){
                     console.log(err);
                 }
             },
-            articles
+            //articles
         });
+        dom.appendChild(favoriteList.renderDOM());
 
         const footer = new Footer();
         dom.append(footer.renderDOM);
