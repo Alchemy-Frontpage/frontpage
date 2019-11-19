@@ -1,5 +1,6 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
+import Footer from '../common/Footer.js';
 // import Loading from '../common/Loading.js';
 // import AddTodo from './AddTodo.js';
 import FrontPageList from './FrontPageList.js';
@@ -8,7 +9,7 @@ import { getFrontPage } from '../services/domain-api.js';
 class FrontPageApp extends Component {
 
     async onRender(dom) {
-        const header = new Header({ title: 'My News' });
+        const header = new Header();
         dom.prepend(header.renderDOM());
         
         const main = dom.querySelector('main');
@@ -85,6 +86,9 @@ class FrontPageApp extends Component {
         // finally {
         //     loading.update({ loading: false });
         // }
+
+        const footer = new Footer();
+        main.appendChild(footer.renderDOM());
 
     }
 
