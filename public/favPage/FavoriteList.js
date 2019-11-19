@@ -8,7 +8,9 @@ export class FavoriteList extends Component {
 
         articles.forEach(article => {
             let articleToRender = new FavoriteItem({ 
-                article,
+                article
+                
+                ,
                 onDelete
             });
 

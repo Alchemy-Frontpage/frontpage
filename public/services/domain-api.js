@@ -79,3 +79,18 @@ export function deleteFavorite(id) {
     });
 }
 
+export function addFavorite(fav) {
+    const url = `${URL}/favorites`;
+    return fetchWithError(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(fav)
+    });
+}
+
+export function getFavorites() {
+    const url = `${URL}/favorites`;
+    return fetchWithError(url);
+}

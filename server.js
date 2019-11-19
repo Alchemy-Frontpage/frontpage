@@ -35,6 +35,51 @@ app.get('/api/news', async (req, res) => {
     }
 });
 
+app.post('/api/favorites', async (req, res) => {
+    let user = req.userId;
+    let newArticle = req.body;
+    try {
+        const result = await client.query(`
+            INSERT INTO favorites
+                (
+                user_id,
+                source_name,
+                author,
+                title,
+                description,
+                link,
+                image,
+                date,
+                content 
+                )
+                VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+                RETURNING *
+        `,
+        [user, newArticle.source_name, newArticle.author, newArticle.title, newArticle.description, newArticle.link, newArticle.image, newArticle.date, newArticle.content]
+        );
+        res.status(200).json(result.rows[0]);
+    }
+    catch (err){
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+app.get('/api/favorites', async (req, res) => {
+    let user = req.userId;
+    try {
+        const result = await client.query(`
+            SELECT *
+            FROM favorites
+            WHERE user_id = $1
+        `, [user]);
+        res.status(200).json(result.rows);
+    }
+    catch (err){
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
 // http method and path...
 
 
