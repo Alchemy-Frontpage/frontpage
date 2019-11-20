@@ -19,7 +19,9 @@ class FavoriteList extends Component {
     }
     renderHTML(){
         return /*html*/`
-        <section></section>
+        <section>
+        
+        </section>
         `;
     }
 }
