@@ -6,8 +6,8 @@ class Footer extends Component {
         return /*html*/ `
             <footer>
                 <nav>
-                    <a href="./">Feed</a>
-                    <a href="./favorites">Faves</a>
+                    <a href="./front-page/front-page.html"><img src="../assets/reload_yellow.png" alt="reload-icon"></a>
+                    <a href="./favPage/index.html"><img src="../assets/heart_yellow.png" alt="heart-icon"></a>
                 </nav>
             </footer>
         `;

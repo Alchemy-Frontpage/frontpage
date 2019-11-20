@@ -1,4 +1,4 @@
-import FavoritePageApp from '../favPage/FavPageApp.js';
+import FavPageApp from './FavPageApp.js';
 
-const app = new FavoritePageApp();
-document.body.prepend(app);
+const app = new FavPageApp();
+document.body.prepend(app.renderDOM());
