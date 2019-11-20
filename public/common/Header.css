@@ -78,7 +78,7 @@ header.header{
 .header .menu-icon .navicon {
   background: #d2ec48;
   display: block;
-  height: 1px;
+  height: 3px;
   position: relative;
   transition: background .2s ease-out;
   width: 18px;
