@@ -28,7 +28,7 @@ class DetailItem extends Component {
         <h1 class="headline"><a href="${detailItem.link}" target="blank">${detailItem.title}</a></h1>
         <img src="${detailItem.image}" alt="">
         <p class="publication_date">${detailItem.date}</p>
-        <p class="byline">${detailItem.author}</p>
+        <p class="byline">${(detailItem.author === null) ? '' : detailItem.author}</p>
         <p class="source">${detailItem.source_name}</p>
         <p class="summary">${(detailItem.description === null) ? '' : detailItem.description}</p>
         <p class="content">${(detailItem.content === null) ? '' : detailItem.content}</p>
