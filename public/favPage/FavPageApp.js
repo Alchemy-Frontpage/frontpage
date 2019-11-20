@@ -9,6 +9,7 @@ class FavPageApp extends Component {
     async onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
+        const main = dom.querySelector('main');
 
         const keywordFilter = new KeywordFilter({ 
             onSubmit: async (searchQuery) => {
@@ -21,7 +22,7 @@ class FavPageApp extends Component {
                 favoriteList.update({ articles });
             }
         });
-        dom.appendChild(keywordFilter.renderDOM());
+        main.appendChild(keywordFilter.renderDOM());
 
         
         const favoriteList = new FavoriteList({
@@ -37,7 +38,7 @@ class FavPageApp extends Component {
                 }
             }
         });
-        dom.appendChild(favoriteList.renderDOM());
+        main.appendChild(favoriteList.renderDOM());
 
 
         try {
@@ -56,8 +57,10 @@ class FavPageApp extends Component {
     }
     renderHTML(){
         return /*html*/`
-        <main>
-        </main>
+        <div>
+            <main>
+            </main>
+        </div>
         `;
     }
 }
