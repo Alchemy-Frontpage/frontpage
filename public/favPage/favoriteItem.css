@@ -1,5 +1,5 @@
 * {
-    margin: 0 1rem;
+    margin: 0 
 }
 article img {
     height: auto;
@@ -28,6 +28,7 @@ article h2 {
 }
 article p {
     text-align: center;
+    color: black;
     font-size: 1.5rem;
 }
 .delete-fav {
@@ -40,14 +41,35 @@ article p {
    
 }
 article {
+  
     padding: 1rem;
     border: 1rem solid #0075b8;
 }
 a {
     text-decoration: none;
     color: #27a16c;
-    text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
+    /* text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1); */
 }
+#filter-container {
+    text-align: center;
+    padding: 70px;
+}
+#submit-filter {
+    padding: 3px;
+    /* margin: 3px; */
+    font-size: 1.2rem;
+    color:#ee5331;
+    background: #0e5883;
+    border: 3px #0e5883;
+    margin-bottom: 2rem;
+    box-shadow: 2px 2px 5px 4px hsla(0, 0%, 12%, 1);
+    outline: none;
+}
+#filter-bar {
+    height: 25px;
+   padding: 5px;
+}
+
 
 
 
