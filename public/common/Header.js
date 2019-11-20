@@ -16,7 +16,7 @@ class Header extends Component {
                         </a>
                     </li>
                     <li>
-                        <a href="../index.html" class="single-link">Front Page
+                        <a href="../front-page/front-page.html" class="single-link">Front Page
                             <i class="fas fa-home"></i>
                         </a>
                     </li>
