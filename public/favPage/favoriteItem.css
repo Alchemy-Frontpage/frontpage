@@ -1,0 +1,59 @@
+* {
+    margin: 0 1rem;
+}
+article img {
+    height: auto;
+    margin-top: 1rem;
+    width: 100%;
+    border: 8px solid #0e5883;
+    box-shadow: 2px 2px 3px 5px hsla(0, 0%, 8%, 1);
+    overflow: hidden;
+}
+.img-container {
+    max-width: 100%;
+}
+
+@media screen and (min-width:800px){
+    .img-container {
+        max-width: 80%;
+        margin: 0 10%;
+    }
+}
+article h2 {
+    padding: 1rem;
+    color: #27a16c;
+    text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
+    text-align: center;
+    font-size: 2rem;
+}
+article p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+.delete-fav {
+    padding: 1rem;
+    background: #0e5883;
+    border: 3px #0e5883;
+    margin-bottom: 2rem;
+    box-shadow: 2px 2px 5px 4px hsla(0, 0%, 12%, 1);
+    outline: none;
+   
+}
+article {
+    padding: 1rem;
+    border: 1rem solid #0075b8;
+}
+a {
+    text-decoration: none;
+    color: #27a16c;
+    text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
+}
+
+
+
+
+/* light blue - #0075b8
+dark blue - #0e5883
+green - #27a16c
+yellow - #d2ec48
+orange - #ee5331 */

@@ -6,3 +6,9 @@ footer nav {
 footer nav a {
     text-decoration: none;
 }
+
+footer {
+    background-color: #0075b8;
+    border-top: 3px solid #d2ec48;
+    padding: 15px;
+}

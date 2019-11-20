@@ -11,6 +11,36 @@ const superagent = require('superagent');
 // (create and connect using DATABASE_URL)
 const client = require('./lib/client');
 client.connect();
+const ensureAuth = require('./lib/auth/ensure-auth');
+const createAuthRoutes = require('./lib/auth/create-auth-routes');
+const authRoutes = createAuthRoutes({
+    selectUser(email) {
+        return client
+            .query(
+                `
+            SELECT id, email, hash 
+            FROM users
+            WHERE email = $1;
+        `,
+                [email]
+            )
+            .then(result => result.rows[0]);
+    },
+    insertUser(user, hash) {
+        console.log(user);
+        return client
+            .query(
+                `
+            INSERT into users (email, hash)
+            VALUES ($1, $2)
+            RETURNING id, email;
+        `,
+                [user.email, hash]
+            )
+            .then(result => result.rows[0]);
+    }
+});
+
 
 // Application Setup
 const app = express();
@@ -20,14 +50,29 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
+app.use('/api/auth', authRoutes);
+app.use('/api', ensureAuth);
 
 
 // API Routes
 app.get('/api/news', async (req, res) => {
     try {
-        let news = await superagent.get('https://newsapi.org/v2/top-headlines?language=en').set(`X-Api-Key`, `${NEWS_API_KEY}`);
-        let newsObj = JSON.parse(news.text);
-        res.status(200).json(newsObj.articles);
+        let rawNews = await superagent.get('https://newsapi.org/v2/top-headlines?language=en').set(`X-Api-Key`, `${NEWS_API_KEY}`);
+        const news = JSON.parse(rawNews.text).articles;
+        console.log(news);
+        
+        const titleLookup = news.reduce((acc, curr) => {
+            if (!acc[curr.title]) {
+                acc[curr.title] = curr;
+            } 
+            return acc;
+
+        }, {});
+
+        const deduplicatedTitles = Object.values(titleLookup);
+
+
+        res.status(200).json(deduplicatedTitles);
     }
     catch (err){
         res.status(500).json(err);
@@ -101,9 +146,13 @@ app.get('/api/favorites/:id', async (req, res) => {
     const id = req.params.id;
     try {
         const result = await client.query(`
-            SELECT FROM favorites
+            SELECT
+                favorites.*,
+                users.id
+            FROM favorites
+            JOIN users
+            ON favorites.user_id = users.id
             WHERE favorites.id = $1
-            RETURNING *
         `, [id]);
         res.status(200).json(result.rows[0]);
     }

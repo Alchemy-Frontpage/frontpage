@@ -28,14 +28,14 @@ async function run() {
             CREATE TABLE favorites (
                 id SERIAL PRIMARY KEY NOT NULL,
                 user_id INTEGER NOT NULL REFERENCES users(id),
-                source_name VARCHAR(256) NOT NULL,
-                author VARCHAR(256) NOT NULL,
-                title VARCHAR(512) NOT NULL,
+                source_name VARCHAR(256),
+                author VARCHAR(256),
+                title VARCHAR(512),
                 description VARCHAR(512),
-                link VARCHAR(999) NOT NULL,
-                image VARCHAR(999) NOT NULL,
-                date VARCHAR(256) NOT NULL,
-                content VARCHAR(512) NOT NULL
+                link VARCHAR(999),
+                image VARCHAR(999),
+                date VARCHAR(256),
+                content VARCHAR(512)
             );
         `);
 

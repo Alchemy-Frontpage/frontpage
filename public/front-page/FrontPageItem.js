@@ -4,7 +4,7 @@ class FrontPageItem extends Component {
 
     onRender(dom) {
         const frontPageItem = this.props.item;
-        const onKeep = this.props.onKeep;
+        const onKeep = this.props.onFavorite;
         const onRemove = this.props.onRemove;
 
 
@@ -28,24 +28,21 @@ class FrontPageItem extends Component {
 
     renderHTML() {
         const frontPageItem = this.props.item;
-        console.log(frontPageItem);
 
-        return /*html*/ `
-            <li class = "card">
-                <h1 class="headline">${frontPageItem.title}</h1>
+        return /*html*/`
+            <article class = "card-item">
+                <h1 class="headline">${(frontPageItem.title === null) ? '' : frontPageItem.title}</h1>
                 <img src="${frontPageItem.urlToImage}" alt="">
                 <div class="byline">
-                    <p class="author">${frontPageItem.author}</p>
-                    <p class="source">${frontPageItem.source.name}</p>
+                    <p class="author">${(frontPageItem.author === null) ? '' : frontPageItem.author}</p>
+                    <p class="source">${(frontPageItem.source.name === null) ? '' : frontPageItem.source.name}</p>
                 </div>
-                <p class="summary">${frontPageItem.description}</p>
+                <p class="summary">${(frontPageItem.description === null) ? '' : frontPageItem.description}</p>
                 <div class="buttons">
                     <button class="remove-button">Remove</button>
                     <button class="keep-button">Keep</button>
                 </div>
-            </li>
-
-
+            </article>
         `;
 
 
