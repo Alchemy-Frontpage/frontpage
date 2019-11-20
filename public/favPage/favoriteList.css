@@ -1,0 +1,19 @@
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: all 1s ease;
+
+}
+ul {
+    display: grid;
+   display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 25px;
+}
+li {
+  background: black;
+ list-style: none;
+ height: auto;
+ width: 100%;
+}
