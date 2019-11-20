@@ -90,7 +90,7 @@ class App extends Component {
                 <div>
                     <!-- header goes here -->
                     <main>
-                        <section>
+                        <section class="user-display">
                             <p>
                                 Signed in as ${user}
                             </p>

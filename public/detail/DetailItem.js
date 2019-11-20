@@ -2,9 +2,10 @@ import Component from '../Component.js';
 
 class DetailItem extends Component {
     onRender(el) {
-        const removeButton = el.querySelector('.remove-fav');
-        removeButton.addEventListener('click', event => {
-            event.preventDefault();
+        const onDelete = this.props.onDelete;
+        const removeButton = el.querySelector('.remove-button');
+        removeButton.addEventListener('click', () => {
+            onDelete();
         });
     }
 
