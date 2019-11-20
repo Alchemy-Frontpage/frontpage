@@ -14,8 +14,6 @@ class FrontPageItem extends Component {
             //What functionality do we want to inlude here?
 
             onKeep(frontPageItem);
-
-
         });
 
         const removeButton = dom.querySelector('.remove-button');

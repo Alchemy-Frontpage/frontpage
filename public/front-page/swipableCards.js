@@ -95,11 +95,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
         } else {
             leftObj.className = '';
             rightObj.className = '';
-            topObj.className = '';
+
 
             leftObj.classList.add('stackedcards-overlay-hidden');
             rightObj.classList.add('stackedcards-overlay-hidden');
-            topObj.classList.add('stackedcards-overlay-hidden');
         }
 
         //Remove class init
