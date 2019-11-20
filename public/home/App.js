@@ -7,7 +7,7 @@ import { signUp as userSignUp, signIn as userSignIn } from '../services/domain-a
 
 function success(user) {
     localStorage.setItem('TOKEN', user.token);
-    localStorage.setItem('USER', user.displayName);
+    localStorage.setItem('USER', user.email);
     const searchParams = new URLSearchParams(location.search);
     location = searchParams.get('redirect') || '../front-page/front-page.html';
 }
