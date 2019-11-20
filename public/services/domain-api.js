@@ -96,7 +96,7 @@ export function getFavorites() {
 }
 
 export function getFavoritesFilter(search) {
-    const url = `${URL}/favorites/filter/?q=${search}`;
+    const url = `${URL}/favorites/filter/?search=${search}`;
     return fetchWithError(url);
 }
 
