@@ -1,15 +1,12 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
 import Footer from '../common/Footer.js';
-import FilterBar from '../filter/Filter.js';
-import FavoriteList from '../front-page/FrontPageList.js';
+import FilterBar from '../common/FilterBar.js';
+import FavoriteList from './FavoriteList.js';
 import { deleteFavorite, getFavorites } from '../services/domain-api.js';
 
 class FavPageApp extends Component {
     async onRender(dom) {
-        //UNCOMMENT AFTER WE HAVE FAVORITE ARTICLES IN DB
-        let articles = await getFavorites();
-
         const header = new Header();
         dom.prepend(header.renderDOM());
         
@@ -17,22 +14,30 @@ class FavPageApp extends Component {
         dom.append(filterBar.renderDOM());
 
         const favoriteList = new FavoriteList({
+            articles: [],
             onDelete: async favoriteToRemove => {
                 try {
-                    await deleteFavorite(favoriteToRemove);
-                    articles = await getFavorites();
+                    await deleteFavorite(favoriteToRemove.id);
+                    let articles = await getFavorites();
                     favoriteList.update({ articles });
                 }
                 catch (err){
                     console.log(err);
                 }
-            },
-            articles
+            }
         });
         dom.appendChild(favoriteList.renderDOM());
 
+        try {
+            let articles = await getFavorites();
+            favoriteList.update({ articles });
+        }
+        catch (err) {
+            console.log(err);
+        }
+
         const footer = new Footer();
-        dom.append(footer.renderDOM);
+        dom.append(footer.renderDOM());
 
     }
     renderHTML(){
