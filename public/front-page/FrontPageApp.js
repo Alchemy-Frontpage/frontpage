@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     function stackedCards() {
         // Our code will go here
     }
-
     stackedCards();
 });
 
@@ -84,7 +83,7 @@ class FrontPageApp extends Component {
                 <!-- header goes here -->
                 <!-- show errors: -->
                 <p class="error"></p>
-                <main class="stackedcards-container">
+                <main>
                     <!-- add todo goes here -->
                     <!-- todo list goes here -->
                 </main>
