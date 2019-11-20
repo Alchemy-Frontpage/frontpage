@@ -120,7 +120,7 @@
   top: 0;
 }
 
-@media (min-width: 38em) {
+@media (min-width: 48em) {
   .header li {
     float: left;
   }
