@@ -12,7 +12,6 @@ class SignUp extends Component {
             const formData = new FormData(form);
 
             const user = {
-                displayName: formData.get('name'),
                 email: formData.get('email'),
                 password: formData.get('password')
             };
@@ -26,13 +25,7 @@ class SignUp extends Component {
       <fieldset> 
       <legend>Get Your News On</legend>    
     <form class="auth-form standard">
-       
-        <p>
-            <label for="name">Name</label>
-            <input id="name" name="name" required placeholder="Your Name">
-        </p>
-    
-        <p>
+      <p>
             <label for="email">Email</label>
             <input id="email" type="email" name="email" required placeholder="you@somewhere.com">
         </p>
