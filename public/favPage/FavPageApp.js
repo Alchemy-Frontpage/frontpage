@@ -3,13 +3,15 @@ import Header from '../common/Header.js';
 import Footer from '../common/Footer.js';
 import FilterBar from '../common/FilterBar.js';
 import FavoriteList from './FavoriteList.js';
+import KeywordFilter from './KeywordFilter.js';
 import { deleteFavorite, getFavorites } from '../services/domain-api.js';
 
 class FavPageApp extends Component {
     async onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
-        
+
+            
         const filterBar = new FilterBar();
         dom.append(filterBar.renderDOM());
 
@@ -27,6 +29,15 @@ class FavPageApp extends Component {
             }
         });
         dom.appendChild(favoriteList.renderDOM());
+
+        const keywordFilter = new KeywordFilter({ 
+            onSubmit: async (searchQuery) => {
+                console.log('fetching favorites', searchQuery);
+                console.log('updating favorite list with fetched favorites');
+            }
+            
+        });
+        dom.appendChild(keywordFilter.renderDOM());
 
         try {
             let articles = await getFavorites();
