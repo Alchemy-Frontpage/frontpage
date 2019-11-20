@@ -4,7 +4,7 @@ class FilterBar extends Component {
     onRender(dom){
 
         const filterButton = dom.querySelector('#submit-filter');
-        filterButton.addEvenetListener('click', event => {
+        filterButton.addEventListener('click', event => {
             
             const filterKeywords = dom.querySelector('input').value;
             const filterParams = new URLSearchParams().set('q', filterKeywords);

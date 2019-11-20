@@ -7,7 +7,7 @@ import { signUp as userSignUp, signIn as userSignIn } from '../services/domain-a
 
 function success(user) {
     localStorage.setItem('TOKEN', user.token);
-    localStorage.setItem('USER', user.displayName);
+    localStorage.setItem('USER', user.email);
     const searchParams = new URLSearchParams(location.search);
     location = searchParams.get('redirect') || '../front-page/front-page.html';
 }
@@ -63,6 +63,7 @@ class App extends Component {
                 }
             }
         });
+
         signInContainer.appendChild(signIn.renderDOM());
 
         const switchToSignIn = dom.querySelector('#signin-button');
@@ -89,7 +90,7 @@ class App extends Component {
                 <div>
                     <!-- header goes here -->
                     <main>
-                        <section class="user-display">
+                        <section>
                             <p>
                                 Signed in as ${user}
                             </p>

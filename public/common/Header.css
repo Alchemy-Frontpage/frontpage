@@ -1,87 +1,142 @@
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .navbar_header {
-    font-size: 2rem;
-    color: #27a16c;
-    text-align: center;
-    background: #0075b8;
-    text-transform: capitalize;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    border-bottom: #ee5331;
-  }
-  .navbar_btn {
-    align-self: center;
-    border: 3px solid #ee5331;
-    cursor: pointer;
-    background: #0e5883;
-  }
-  .navbar_links {
-    list-style: none;
-    transition: all 1s ease;
-  }
-  .single-link {
-    display: block;
-    background: #0e5883;
-    padding: 1rem;
+.single-link {
+  padding: 1rem;
     font-size: 1.2rem;
     text-decoration: none;
     text-transform: capitalize;
     color: #27a16c;
-  }
-  .single-link:hover {
-    padding-left: 1.5rem;
+    background: #0e5883;
+    text-shadow: 1px 1px 1px hsla(0, 0%, 8%, 1);
+}
+.single-link:hover {
     color: #d2ec48;
     background: #0075b8;
-  }
-  .show {
-   visibility: hidden;
-  }
-  button {
-    width: 2rem;
-    background: #ee5331;
-    font-size: 1rem;
-    border: 2px solid #ee5331;
-    outline: none;
-  }
-  
-  
-  /* 
-light blue - #0075b8
-dark blue - #0e5883
-green - #27a16c
-yellow - #d2ec48
-orange - #ee5331
+}
+.logo {
+  color: #27a16c;
+  background:  #0075b8;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 1px hsla(0, 0%, 8%, 1);
+}
 
- */
-  /* <header>
-           <nav class = "navbar">
-           <div class="navbar_header">Front Page: Swiping the hottest news
-           <div class="navbar_btn">
-                    <i class="fa fa-bars"></i>
-                </a>
-           </div>
-           </div>
-           <ul class="navbar_links">
-              <li>
-                    <a href="#" class="single-link">Favorites
-                       <i class="fas fa-heart"></i>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="#" class="single-link">Front Page
-                        <i class="fas fa-home"></i>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="#" class="single-link">About Us
-                       <i class="fas fa-users"></i>
-                    </a>
-                    </li>
-               </ul>
-               </nav>
-        </header> */
+.header {
+  background-color:  #0075b8;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  border-bottom: 4px solid #d2ec48;
+  width: 100%;
+  z-index: 3;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background: #ee5331;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background: #0075b8;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.header .navbar_links {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #d2ec48;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background:#ee5331;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .navbar_links {
+  max-height: 12em;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 38em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .navbar_links {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .single-link {
+    background:  #0075b8;
+    color: #ee5331;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}

@@ -1,13 +1,15 @@
 import Component from '../Component.js';
 
 class FavoriteItem extends Component {
-    onRender(el){
+    onRender(dom){
+        const article = this.props.article;
         const onDelete = this.props.onDelete;
 
-        const removeButton = el.querySelector('.remove-fav');
+        const removeButton = dom.querySelector('.delete-fav');
         removeButton.addEventListener('click', event => {
-            event.preventDefault();
-            onDelete(this.event);
+            // event.preventDefault();
+            onDelete(article);
+            //.console.log(article);
         });
     }
     
@@ -22,12 +24,14 @@ class FavoriteItem extends Component {
         }
 
         return /*html*/`
+        
             <article>
-                <img src="${article.urlToImage}">
+                <img src="${article.image}">
                 <h2>${article.title}</h2>
                 <p>${description}</p>
                 <button class="delete-fav">❌</button>
             </article>
+            
         `;
     }
 }

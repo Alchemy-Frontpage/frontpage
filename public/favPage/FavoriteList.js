@@ -1,9 +1,9 @@
 import Component from '../Component.js';
-import FavoriteItem from './favoriteItem.js';
+import FavoriteItem from './FavoriteItem.js';
 
-export class FavoriteList extends Component {
+class FavoriteList extends Component {
     onRender(dom){
-        let articles = this.state.articles;
+        let articles = this.props.articles;
         let onDelete = this.props.onDelete;
 
         articles.forEach(article => {
@@ -19,7 +19,11 @@ export class FavoriteList extends Component {
     }
     renderHTML(){
         return /*html*/`
-        <section></section>
+        <section>
+        
+        </section>
         `;
     }
 }
+
+export default FavoriteList;
