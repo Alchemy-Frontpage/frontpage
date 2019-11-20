@@ -2,8 +2,9 @@ import Component from '../Component.js';
 
 class SignUp extends Component {
 
-    onRender(form) {
+    onRender(dom) {
         const onSignUp = this.props.onSignUp;
+        const form = dom.querySelector('form');
 
         form.addEventListener('submit', event => {
             event.preventDefault();
@@ -22,8 +23,8 @@ class SignUp extends Component {
 
     renderHTML() {
         return /*html*/`
-            <fieldset>
-        <legend>Get Your News On</legend>
+      <fieldset> 
+      <legend>Get Your News On</legend>    
     <form class="auth-form standard">
        
         <p>
@@ -45,8 +46,12 @@ class SignUp extends Component {
         </p>
     </form>
     </fieldset>
+    
         `;
     }
 }
 
 export default SignUp;
+
+{/* <fieldset>
+    <legend>Get Your News On</legend> </fieldset> */}

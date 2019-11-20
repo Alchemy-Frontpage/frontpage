@@ -63,6 +63,7 @@ class App extends Component {
                 }
             }
         });
+
         signInContainer.appendChild(signIn.renderDOM());
 
         const switchToSignIn = dom.querySelector('#signin-button');
@@ -89,7 +90,7 @@ class App extends Component {
                 <div>
                     <!-- header goes here -->
                     <main>
-                        <section class="user-display">
+                        <section>
                             <p>
                                 Signed in as ${user}
                             </p>
