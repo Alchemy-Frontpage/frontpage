@@ -4,7 +4,7 @@ import Footer from '../common/Footer.js';
 import FilterBar from '../common/FilterBar.js';
 import FavoriteList from './FavoriteList.js';
 import KeywordFilter from './KeywordFilter.js';
-import { deleteFavorite, getFavorites } from '../services/domain-api.js';
+import { deleteFavorite, getFavorites, getFavoritesFilter } from '../services/domain-api.js';
 
 class FavPageApp extends Component {
     async onRender(dom) {
@@ -34,6 +34,9 @@ class FavPageApp extends Component {
             onSubmit: async (searchQuery) => {
                 console.log('fetching favorites', searchQuery);
                 console.log('updating favorite list with fetched favorites');
+
+                const newFavs = getFavoritesFilter(searchQuery);
+                favoriteList.update({ newFavs });
             }
             
         });

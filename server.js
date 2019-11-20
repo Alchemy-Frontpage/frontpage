@@ -117,6 +117,23 @@ app.get('/api/favorites', async (req, res) => {
             SELECT *
             FROM   favorites
             WHERE  user_id = $1
+        `, [req.userId]);
+        console.log(result);
+        res.status(200).json(result.rows);
+    }
+    catch (err){
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+app.get('/api/favorites/filter', async (req, res) => {
+    try {
+        console.log(req.query);
+        const result = await client.query(`
+            SELECT *
+            FROM   favorites
+            WHERE  user_id = $1
             AND title LIKE $2
         `, [req.userId, `'${req.query.search}%'`]);
         console.log(result);

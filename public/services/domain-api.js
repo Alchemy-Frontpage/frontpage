@@ -91,7 +91,12 @@ export function addFavorite(fav) {
 }
 
 export function getFavorites() {
-    const url = `${URL}/favorites/?search=Canadian`;
+    const url = `${URL}/favorites`;
+    return fetchWithError(url);
+}
+
+export function getFavoritesFilter(search) {
+    const url = `${URL}/favorites/filter/?q=${search}`;
     return fetchWithError(url);
 }
 

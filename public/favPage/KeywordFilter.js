@@ -14,8 +14,6 @@ class KeywordFilter extends Component {
         });
     }
 
-
-
     renderHTML() {
         return /*html*/`
         <form class="keyword-search">
