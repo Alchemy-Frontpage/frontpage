@@ -27,13 +27,10 @@ class FavoriteItem extends Component {
         return /*html*/`
             <article>
             <div class="img-container">
+             <a href="../detail/detail.html?id=${article.id}">
                 <img src="${article.image}">
                 </div>
-                <h2>${article.title}</h2>
-                <p>${description}</p>
-                <button class="delete-fav">❌</button>
                 <a href="../detail/detail.html?id=${article.id}">
-                    <img src="${article.image}">
                     <h2>${article.title}</h2>
                     <p>${description}</p>
                 </a>
