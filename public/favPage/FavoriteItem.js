@@ -25,7 +25,7 @@ class FavoriteItem extends Component {
 
         return /*html*/`
             <article>
-                <a href="detail.html?id=${article.id}">
+                <a href="../detail/detail.html?id=${article.id}">
                     <img src="${article.image}">
                     <h2>${article.title}</h2>
                     <p>${description}</p>

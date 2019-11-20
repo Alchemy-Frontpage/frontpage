@@ -146,9 +146,13 @@ app.get('/api/favorites/:id', async (req, res) => {
     const id = req.params.id;
     try {
         const result = await client.query(`
-            SELECT FROM favorites
+            SELECT
+                favorites.*,
+                users.id
+            FROM favorites
+            JOIN users
+            ON favorites.user_id = users.id
             WHERE favorites.id = $1
-            RETURNING *
         `, [id]);
         res.status(200).json(result.rows[0]);
     }

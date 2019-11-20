@@ -12,20 +12,26 @@ class DetailItem extends Component {
     renderHTML() {
         const detailItem = this.props.article;
 
-        let description = '';
-        if (detailItem.description) {
-            description = detailItem.description;
-        } else {
-            description = detailItem.content.slice(0, 49);
-        }
+        // let description = '';
+        // if (detailItem.description) {
+        //     description = detailItem.description;
+        // } else {
+        //     description = detailItem.content.slice(0, 49);
+        // }
+
+        // let content = '';
+        // if (detailItem.content){
+        //     content = detailItem.content;
+        // } else 
 
         return /*html*/ `<li class = "detail-item">
-        <h1 class="headline"><a href="${detailItem.link} target=_blank">${detailItem.title}</a></h1>
-        <img src="${detailItem.urlToImage}" alt="">
+        <h1 class="headline"><a href="${detailItem.link}" target="blank">${detailItem.title}</a></h1>
+        <img src="${detailItem.image}" alt="">
         <p class="publication_date">${detailItem.date}</p>
         <p class="byline">${detailItem.author}</p>
         <p class="source">${detailItem.source_name}</p>
-        <p class="summary">${description}</p>
+        <p class="summary">${(detailItem.description === null) ? '' : detailItem.description}</p>
+        <p class="content">${(detailItem.content === null) ? '' : detailItem.content}</p>
         <button class="remove-button">Remove from Favorites</button>
     </li>`;
     }

@@ -1,7 +1,7 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
 import DetailItem from './DetailItem.js';
-import { getFavorite, deleteFavorite } from '../services/domain-api';
+import { getFavorite, deleteFavorite } from '../services/domain-api.js';
 
 class DetailApp extends Component {
     async onRender(dom) {
@@ -19,6 +19,7 @@ class DetailApp extends Component {
         }
         try {
             const article = await getFavorite(id);
+            console.log(article);
             const detailItem = new DetailItem({
                 article,
                 onDelete: async () => {
