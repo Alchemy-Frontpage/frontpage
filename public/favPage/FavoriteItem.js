@@ -4,6 +4,7 @@ class FavoriteItem extends Component {
     onRender(dom){
         const article = this.props.article;
         const onDelete = this.props.onDelete;
+        
 
         const removeButton = dom.querySelector('.delete-fav');
         removeButton.addEventListener('click', event => {
@@ -26,7 +27,9 @@ class FavoriteItem extends Component {
         return /*html*/`
         
             <article>
+            <div class="img-container">
                 <img src="${article.image}">
+                </div>
                 <h2>${article.title}</h2>
                 <p>${description}</p>
                 <button class="delete-fav">❌</button>
