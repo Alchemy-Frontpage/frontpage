@@ -1,7 +1,7 @@
-header {
+/* header {
     position: relative;
     height: 40px;
-}
+} */
 
 ul {
     list-style: none;
@@ -23,6 +23,16 @@ img {
     max-width: 100%;
 }
 
+.kept {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+.removed {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
 .byline {
     display: flex;
     flex-direction: row-reverse;
@@ -33,6 +43,9 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    bottom: 10px;
+    width: 96%;
+    position: absolute;
 }
 
 footer {

@@ -1,4 +1,4 @@
-.card {
+.card-item {
     max-width: 80%;
     left: 10%;
     border: 1px;
@@ -11,13 +11,19 @@
     background: white;
     margin: 0 auto;
     transition: 1s;
+    bottom: 0;
+}
+
+.card-item img {
+    /* max-width: 600px;
+    margin: 0 auto; */
 }
 
 .card:hover {
     transform: translateX(100vw);
     opacity: 0;
-
 }
+
 
 .author,
 .source {

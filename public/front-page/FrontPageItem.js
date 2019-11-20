@@ -11,16 +11,19 @@ class FrontPageItem extends Component {
         const keepButton = dom.querySelector('.keep-button');
         keepButton.addEventListener('click', () => {
 
-            //What functionality do we want to inlude here?
-
             onKeep(frontPageItem);
+            dom.remove();
+            // this.style.display = 'none';
 
 
         });
 
         const removeButton = dom.querySelector('.remove-button');
         removeButton.addEventListener('click', () => {
-            onRemove(frontPageItem);
+            // onRemove(frontPageItem);
+            dom.style()
+            dom.remove();
+            console.log(this.event);
         });
 
 
@@ -29,7 +32,7 @@ class FrontPageItem extends Component {
     renderHTML() {
         const frontPageItem = this.props.item;
 
-        return /*html*/`
+        return /*html*/ `
             <article class = "card-item">
                 <h1 class="headline">${(frontPageItem.title === null) ? '' : frontPageItem.title}</h1>
                 <img src="${frontPageItem.urlToImage}" alt="">
