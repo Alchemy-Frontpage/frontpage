@@ -31,16 +31,6 @@
     font-size: 1.2rem;
 }
 
-.kept {
-    transform: translateX(100vw);
-    opacity: 0;
-}
-
-.removed {
-    transform: translateX(100vw);
-    opacity: 0;
-}
-
 .keep {
     opacity: 0;
     transform: translateX(100vw);
