@@ -10,7 +10,7 @@ This app uses Node, Express, Morgan, PostGres, jsonwebtoken, bcryptjs, cors, dot
 
 To load dependencies for further development: npm i
 
-Endpoints:
+## Endpoints:
     .get/api/news: fetches news stories from news-api. Example response:
     ```
     {
@@ -54,6 +54,18 @@ Endpoints:
     .delete/api/favorites/:id: removes a favorite from the favorite table
     .get/api/favorites:id: fetches a single article from the favorites table, typically used for displaying all details of an article.
 
-Tables:
+## Tables:
     users: serialized ID, e.m.a.i.l., hash
     favorites: serialized ID, user_id, source_name, author, title, description (allows null value), link, image, date, content.
+
+## User Stories:
+
+Jessica: 18, wishes all apps were like Tinder. She likes FrontPage because it allows her to swipe left on the news.  
+
+Calpernia: 28, the news cycle is too fast for Calpernia, she's looking for a way to store news items so she can read them when she has time. She likes Front Page because the articles she saves don't refresh or disappear. 
+
+Igor: 33, loves getting Buzzfeed and Fox news in a single place. He uses Front Page because there is almost no filter on the amazing content coming from the API.
+
+Georgie: 35, like flicking through the news and quickly highlighting the articles he wants to read in more depth. The Tinder interface is intuitive to Georgie.
+
+Erica: 15, her mom won't let her on Tinder yet, but she loves the interface and can find all her Kardashian news in the same spot. 
