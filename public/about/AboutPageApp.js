@@ -13,7 +13,7 @@ class AboutPageApp extends Component {
     renderHTML(){
         return /*html*/`
         <div>
-            <main>All about us</main>
+            <main></main>
         </div>
         `;
     }
