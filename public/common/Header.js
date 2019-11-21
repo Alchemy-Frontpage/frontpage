@@ -21,7 +21,7 @@ class Header extends Component {
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="single-link">About Us
+                        <a href="../about/index.html" class="single-link">About Us
                             <i class="fas fa-users"></i>
                         </a>
                     </li>
