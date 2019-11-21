@@ -5,7 +5,7 @@ import { getFavorite, deleteFavorite } from '../services/domain-api.js';
 
 class DetailApp extends Component {
     async onRender(dom) {
-        const header = new Header({ title: 'Article Details' });
+        const header = new Header();
         dom.prepend(header.renderDOM());
 
         const main = dom.querySelector('main');
@@ -19,7 +19,6 @@ class DetailApp extends Component {
         }
         try {
             const article = await getFavorite(id);
-            console.log(article);
             const detailItem = new DetailItem({
                 article,
                 onDelete: async () => {
