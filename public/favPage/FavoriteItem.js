@@ -32,7 +32,7 @@ class FavoriteItem extends Component {
                 </div>
                     <h2>${article.title}</h2>   
                 </a>
-                    <button class="delete-fav">❌</button>
+                    <button class="delete-fav"><img src="../assets/delete_yellow.png" alt="heart-icon"></button>
             </article>
             
         `;
