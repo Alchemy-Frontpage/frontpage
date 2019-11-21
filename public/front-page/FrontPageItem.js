@@ -8,10 +8,23 @@ class FrontPageItem extends Component {
         // const onRemove = this.props.onRemove;
 
         dom.addEventListener('swiped-right', function(e) {
-            console.log(e.target); // element that was swiped
+            onKeep(frontPageItem);
+            dom.classList.add('keep');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
         });
         dom.addEventListener('swiped-left', function(e) {
-            console.log(e.target); // element that was swiped
+            dom.classList.add('remove');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
         });
         const keepButton = dom.querySelector('.keep-button');
         keepButton.addEventListener('click', () => {
