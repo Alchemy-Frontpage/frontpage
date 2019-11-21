@@ -140,6 +140,8 @@ app.get('/api/favorites/filter', async (req, res) => {
             WHERE  user_id = $1
             AND title LIKE $2
             OR title LIKE $3
+            OR content LIKE $2
+            OR content LIKE $3
         `, [req.userId, `%${searchInputToUppercase}%`, `%${req.query.search}%`]);
         console.log(result);
         res.status(200).json(result.rows);
