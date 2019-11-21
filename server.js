@@ -139,7 +139,8 @@ app.get('/api/favorites/filter', async (req, res) => {
             FROM   favorites
             WHERE  user_id = $1
             AND title LIKE $2
-        `, [req.userId, `%${searchInputToUppercase}%`]);
+            OR title LIKE $3
+        `, [req.userId, `%${searchInputToUppercase}%`, `%${req.query.search}%`]);
         console.log(result);
         res.status(200).json(result.rows);
     }
