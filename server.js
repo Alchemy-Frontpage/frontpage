@@ -111,13 +111,36 @@ app.post('/api/favorites', async (req, res) => {
 });
 
 app.get('/api/favorites', async (req, res) => {
-    let user = req.userId;
     try {
+        console.log(req.query);
         const result = await client.query(`
             SELECT *
-            FROM favorites
-            WHERE user_id = $1
-        `, [user]);
+            FROM   favorites
+            WHERE  user_id = $1
+        `, [req.userId]);
+        console.log(result);
+        res.status(200).json(result.rows);
+    }
+    catch (err){
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
+app.get('/api/favorites/filter', async (req, res) => {
+    try {
+        console.log(req.query);
+        const searchInput = req.query.search;
+
+        const searchInputToUppercase = searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
+
+        const result = await client.query(`
+            SELECT *
+            FROM   favorites
+            WHERE  user_id = $1
+            AND title LIKE $2
+        `, [req.userId, `%${searchInputToUppercase}%`]);
+        console.log(result);
         res.status(200).json(result.rows);
     }
     catch (err){
@@ -146,9 +169,13 @@ app.get('/api/favorites/:id', async (req, res) => {
     const id = req.params.id;
     try {
         const result = await client.query(`
-            SELECT FROM favorites
+            SELECT
+                favorites.*,
+                users.id
+            FROM favorites
+            JOIN users
+            ON favorites.user_id = users.id
             WHERE favorites.id = $1
-            RETURNING *
         `, [id]);
         res.status(200).json(result.rows[0]);
     }

@@ -16,12 +16,12 @@ class Header extends Component {
                         </a>
                     </li>
                     <li>
-                        <a href="../index.html" class="single-link">Front Page
+                        <a href="../front-page/front-page.html" class="single-link">Front Page
                             <i class="fas fa-home"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="single-link">About Us
+                        <a href="../about/index.html" class="single-link">About Us
                             <i class="fas fa-users"></i>
                         </a>
                     </li>

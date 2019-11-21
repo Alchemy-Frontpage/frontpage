@@ -84,7 +84,7 @@ class FrontPageApp extends Component {
                 <!-- header goes here -->
                 <!-- show errors: -->
                 <p class="error"></p>
-                <main class="stackedcards-container">
+                <main class="cards-container">
                     <!-- add todo goes here -->
                     <!-- todo list goes here -->
                 </main>

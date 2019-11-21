@@ -1,18 +1,15 @@
-header {
+/* header {
     position: relative;
     height: 40px;
-}
-
+} */
 
 ul {
-    display: grid;
-    grid-template-rows: auto;
-    width: 75%;
-    margin: auto;
     list-style: none;
+    padding: 0;
 }
 
-body, html {
+body,
+html {
     font-family: 'News Cycle', sans-serif;
     height: 100vh;
 }
@@ -40,13 +37,15 @@ img {
 
 footer {
     position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 
 
 
 
-/* 
+/*
 HTML
 
 <div>

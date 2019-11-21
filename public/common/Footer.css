@@ -11,4 +11,8 @@ footer {
     background-color: #0075b8;
     border-top: 3px solid #d2ec48;
     padding: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

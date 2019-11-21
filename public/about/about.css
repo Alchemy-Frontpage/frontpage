@@ -1,0 +1,28 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    width: 80%;
+    margin: auto;
+    margin-top: 18vh;
+}
+    
+h1 {
+    padding: 1rem;
+    color: #27a16c;
+    text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+img {
+    max-width: 100%;
+}
+
