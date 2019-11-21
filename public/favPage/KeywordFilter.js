@@ -22,18 +22,13 @@ class KeywordFilter extends Component {
         return /*html*/`
         <div class="search-container">
             <form class="keyword-search">
-            <label></label>
-            <p>
+          
                 <input id="search" name="search" placeholder="Keywords">
-            </p>
-            <p>
-                <button class="search">Search 🔍</button>
-            </p>
             
-            </form>
-        <p>
-            <button class="clear-search">Clear Search</button>
-        </p>
+                <button class="search">Search 🔍</button>
+                </form>
+                <button class="clear-search">Clear Search</button>
+       
         </div>
         `;
     }
