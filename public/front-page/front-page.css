@@ -2,6 +2,9 @@
     position: relative;
     height: 40px;
 } */
+header.header {
+    padding: 0
+}
 
 ul {
     list-style: none;

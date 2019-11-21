@@ -1,6 +1,6 @@
 .card-item {
-    max-width: 80%;
-    left: 10%;
+    width: 100%;
+    left: 0%;
     border: 1px;
     box-shadow: 2px 2px 7px 1px;
     border-radius: 5px;
@@ -11,7 +11,14 @@
     background: white;
     margin: 0 auto;
     transition: 1s;
-    bottom: 50px;
+    /* bottom: 50px; */
+}
+
+@media screen and (min-width: 900px) {
+    .card-item {
+        width: 70%;
+        left: 15%;
+    }
 }
 
 .kept {
