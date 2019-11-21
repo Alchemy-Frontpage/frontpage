@@ -1,11 +1,12 @@
 main{
+    padding-top: 10vh;
     display: flex;
     justify-content: center;
     color: #27a16c;
     text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
 }
 
-li{
+.detail-item{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,7 +63,7 @@ p{
     justify-content: flex-end;
 }
 
-@media screen and (min-width: 720px){
+/* @media screen and (min-width: 720px){
     li{
         width: 690px;
     }
@@ -70,4 +71,4 @@ p{
         width: 635px;
     }
 
-}
+} */

@@ -23,7 +23,7 @@ class SignIn extends Component {
     renderHTML() {
         return /*html*/`
           <fieldset>  
-          <legend>Welcome Back</legend>
+         
     <form class="auth-form standard">
         <p>
             <label for="signin-email">Email:</label>

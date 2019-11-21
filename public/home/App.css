@@ -1,7 +1,8 @@
+
 .user-display, .no-display {
     max-width: 27rem;
     height: 15rem;
-    margin: 5rem auto;
+    margin: auto;
     padding: 30px;
      background: #ee5331;
 }
@@ -15,22 +16,7 @@ main {
     padding: 30px;
      background: #ee5331;  
 }
-fieldset {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20rem;
-  padding: 1.5rem;
-  text-align: center;
-  border: 1.3rem solid #27a16c;
-   background: #0075b8;
-}
-legend {
-  font-size: 1.4rem;
-  color: #0e5883;
-  text-shadow:  black;
-  background: #27a16c;
-}
+
 form p {
     margin: 10px 0;
    
@@ -66,7 +52,7 @@ main p.errors, .user-display {
 #signup-button, #signin-button {
  background: #ee5331;
  border: 2px solid  #ee5331;
-margin-bottom: 2rem;
+
 box-shadow: 2px 2px 3px 2px hsla(0, 0%, 8%, 1);
 text-align: center;
 outline: none;
@@ -76,7 +62,6 @@ p.switch, p {
     padding: 0.5rem;
 }
 #signup-container, #signin-container {
-margin-top: 9rem;
 border: 10px solid #27a16c
 }
 label {
@@ -84,3 +69,4 @@ label {
     width: 80px;
     margin: 0.5rem;
 } 
+
