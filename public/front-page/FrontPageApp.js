@@ -5,15 +5,15 @@ import Footer from '../common/Footer.js';
 import FrontPageList from './FrontPageList.js';
 import { getFrontPage, addFavorite } from '../services/domain-api.js';
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    // DOM fully loaded and parsed
+// document.addEventListener('DOMContentLoaded', function(event) {
+//     // DOM fully loaded and parsed
 
-    function stackedCards() {
-        // Our code will go here
-    }
+//     function stackedCards() {
+//         // Our code will go here
+//     }
 
-    stackedCards();
-});
+//     stackedCards();
+// });
 
 class FrontPageApp extends Component {
 
