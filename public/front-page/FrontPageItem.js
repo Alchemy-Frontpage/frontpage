@@ -51,8 +51,9 @@ class FrontPageItem extends Component {
                 </div>
                 <p class="summary">${(frontPageItem.description === null) ? '' : frontPageItem.description}</p>
                 <div class="buttons">
-                    <button class="remove-button">Remove</button>
-                    <button class="keep-button">Keep</button>
+                    <button class="remove-button"><i class="fas fa-times"></i>
+                    </button>
+                    <button class="keep-button"><i class="fas fa-heart"></i></button>
                 </div>
             </article>
         `;

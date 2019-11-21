@@ -39,15 +39,6 @@ img {
     justify-content: space-between;
 }
 
-.buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    bottom: 10px;
-    width: 96%;
-    position: absolute;
-}
-
 footer {
     position: fixed;
 }

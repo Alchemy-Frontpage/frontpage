@@ -24,41 +24,19 @@
     transform: translateX(-100vw);
 }
 
-@-moz-keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    bottom: 10px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, .5)
 }
 
-@-webkit-keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-
-
-.card-item img {
-    /* max-width: 600px;
-    margin: 0 auto; */
+.buttons button {
+    font-size: 32px;
+    border-radius: 50%;
 }
 
 .card:hover {
