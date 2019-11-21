@@ -5,15 +5,11 @@ import Footer from '../common/Footer.js';
 import FrontPageList from './FrontPageList.js';
 import { getFrontPage, addFavorite } from '../services/domain-api.js';
 
-// document.addEventListener('DOMContentLoaded', function(event) {
-//     // DOM fully loaded and parsed
-
-//     function stackedCards() {
-//         // Our code will go here
-//     }
-
-//     stackedCards();
-// });
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('img').forEach(function(img) {
+        img.onerror = function() { this.style.display = 'none'; };
+    });
+});
 
 class FrontPageApp extends Component {
 
@@ -33,28 +29,6 @@ class FrontPageApp extends Component {
                     console.log(err);
                 }
             }
-            // onRemove: async todo => {
-            //     loading.update({ loading: true });
-            //     error.textConent = '';
-
-            //     try {
-            //         await removeTodo(todo.id);
-
-            //         const todos = this.state.todos;
-
-            //         const index = todos.indexOf(todo);
-
-            //         todos.splice(index, 1);
-
-            //         todoList.update({ todos });
-            //     }
-
-            //     catch (err) {
-            //         console.log(err);
-            //     } finally {
-            //         loading.update({ loading: false });
-            //     }
-            // }
 
 
         });
