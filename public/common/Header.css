@@ -3,7 +3,7 @@
   margin: 0;
 }
 .single-link {
-  padding: 1rem;
+  padding: 1.5rem;
     font-size: 0.7rem;
     text-decoration: none;
     text-transform: capitalize;
@@ -92,11 +92,11 @@
 }
 
 .header .menu-icon .navicon:before {
-  top: 5px;
+  top: 10px;
 }
 
 .header .menu-icon .navicon:after {
-  top: -5px;
+  top: -10px;
 }
 
 .header .menu-btn {

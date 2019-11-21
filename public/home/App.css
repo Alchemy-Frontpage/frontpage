@@ -79,4 +79,12 @@ label {
     width: 80px;
     margin: 0.5rem;
 } 
+.logout {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+
 
