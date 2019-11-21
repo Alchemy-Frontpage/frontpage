@@ -6,13 +6,14 @@
     border-radius: 5px;
     padding: 1rem;
     position: absolute;
-    height: 600px;
+    height: 70vh;
     overflow: hidden;
     background: white;
     margin: 0 auto;
     transition: 1s;
-    bottom: 0;
+    bottom: 50px;
 }
+
 .kept {
     transform: translateX(100vw);
     opacity: 0;
