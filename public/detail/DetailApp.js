@@ -1,5 +1,6 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
+import Footer from '../common/Footer.js';
 import DetailItem from './DetailItem.js';
 import { getFavorite, deleteFavorite } from '../services/domain-api.js';
 
@@ -35,6 +36,10 @@ class DetailApp extends Component {
         } catch (err) {
             console.log('Article Details loading failed\n', err);
         }
+
+        const footer = new Footer();
+        dom.appendChild(footer.renderDOM());
+
     }
 
 

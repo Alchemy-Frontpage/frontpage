@@ -3,7 +3,7 @@ main{
     display: flex;
     justify-content: center;
     color: #27a16c;
-    text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
+    text-shadow: 1px 1px 1px hsla(0, 0%, 8%, 1);
 }
 
 .detail-item{
@@ -22,20 +22,21 @@ main{
     text-align: right;
 }
 
-img{
+li img{
     width: 325px;
     margin: 0 auto;
 }
 
-button{
-    
-    border: 2px solid black;
-    background-color: #d2ec48;
-    border-radius: 2px;
+button img{
+    width: 30px;
 }
 
 a{
     text-decoration: none;
+}
+
+.logo{
+    font-family: 'Calistoga', cursive;
 }
 
 h2{
@@ -53,8 +54,9 @@ h2{
     color: #27a16c;
 }
 
-p{
+.info{
     text-align: justify;
+    margin: 10px;
 }
 
 .links{
@@ -63,12 +65,7 @@ p{
     justify-content: flex-end;
 }
 
-/* @media screen and (min-width: 720px){
-    li{
-        width: 690px;
-    }
-    img{
-        width: 635px;
-    }
-
-} */
+footer img {
+    height: 30px;
+    margin: 2px 75px;
+}
