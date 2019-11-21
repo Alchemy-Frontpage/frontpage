@@ -7,7 +7,7 @@ class FrontPageItem extends Component {
         const onKeep = this.props.onFavorite;
         // const onRemove = this.props.onRemove;
 
-        dom.addEventListener('swiped-right', function(e) {
+        dom.addEventListener('swiped-right', function() {
             onKeep(frontPageItem);
             dom.classList.add('keep');
 
@@ -17,7 +17,7 @@ class FrontPageItem extends Component {
                 },
                 500);
         });
-        dom.addEventListener('swiped-left', function(e) {
+        dom.addEventListener('swiped-left', function() {
             dom.classList.add('remove');
 
             setTimeout(
