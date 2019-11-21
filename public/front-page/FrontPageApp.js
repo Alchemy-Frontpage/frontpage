@@ -22,6 +22,8 @@ class FrontPageApp extends Component {
         dom.prepend(header.renderDOM());
 
         const main = dom.querySelector('main');
+        const publisherList = dom.querySelector('#publisher-list');
+        console.log(publisherList);
 
         const frontPageList = new FrontPageList({
             frontPageItems: [],
@@ -61,10 +63,40 @@ class FrontPageApp extends Component {
         main.appendChild(frontPageList.renderDOM());
         // initial todo load:
         try {
+            let url = new URL(window.location + '#');
+            
             const frontPageItems = await getFrontPage();
             this.state.frontPageItems = frontPageItems;
-
             frontPageList.update({ frontPageItems });
+
+            let publishers = frontPageItems.reduce((acc, curr) => {
+                if (!acc.includes(curr.source.name)){
+                    acc.push(curr.source.name);
+                }
+                return acc;
+            }, []);
+            publishers = publishers.sort();
+            publishers.forEach(publisher => {
+                let publisherSpan = document.createElement('span');
+                publisherSpan.textContent = publisher;
+
+                const publisherCheckbox = document.createElement('input');
+                publisherCheckbox.type = 'checkbox';
+                publisherCheckbox.value = publisher;
+                publisherSpan.appendChild(publisherCheckbox);
+                publisherCheckbox.addEventListener('change', () =>{
+
+                });
+
+                const publisherGap = document.createElement('span');
+                publisherGap.textContent = ' ';
+                publisherSpan.appendChild(publisherGap);
+
+                console.log(publisherSpan);
+                publisherList.appendChild(publisherSpan);
+            });
+            console.log(publishers);
+
 
         } catch (err) {
             console.log('Update News List failed\n', err);
@@ -84,6 +116,7 @@ class FrontPageApp extends Component {
                 <!-- header goes here -->
                 <!-- show errors: -->
                 <p class="error"></p>
+                <div id="publisher-list"><div>
                 <main class="cards-container">
                     <!-- add todo goes here -->
                     <!-- todo list goes here -->
