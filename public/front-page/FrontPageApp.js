@@ -1,25 +1,28 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
 import Footer from '../common/Footer.js';
-// import Loading from '../common/Loading.js';
+import Loading from '../common/Loading.js';
 import FrontPageList from './FrontPageList.js';
 import { getFrontPage, addFavorite } from '../services/domain-api.js';
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    // DOM fully loaded and parsed
+// document.addEventListener('DOMContentLoaded', function(event) {
+//     // DOM fully loaded and parsed
 
-    function stackedCards() {
-        // Our code will go here
-    }
+//     function stackedCards() {
+//         // Our code will go here
+//     }
 
-    stackedCards();
-});
+//     stackedCards();
+// });
 
 class FrontPageApp extends Component {
 
     async onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
+
+        const loading = new Loading({ loading: true });
+        dom.appendChild(loading.renderDOM());
 
         const main = dom.querySelector('main');
 
@@ -33,30 +36,6 @@ class FrontPageApp extends Component {
                     console.log(err);
                 }
             }
-            // onRemove: async todo => {
-            //     loading.update({ loading: true });
-            //     error.textConent = '';
-
-            //     try {
-            //         await removeTodo(todo.id);
-
-            //         const todos = this.state.todos;
-
-            //         const index = todos.indexOf(todo);
-
-            //         todos.splice(index, 1);
-
-            //         todoList.update({ todos });
-            //     }
-
-            //     catch (err) {
-            //         console.log(err);
-            //     } finally {
-            //         loading.update({ loading: false });
-            //     }
-            // }
-
-
         });
         main.appendChild(frontPageList.renderDOM());
         // initial todo load:
@@ -69,9 +48,9 @@ class FrontPageApp extends Component {
         } catch (err) {
             console.log('Update News List failed\n', err);
         }
-        // finally {
-        //     loading.update({ loading: false });
-        // }
+        finally {
+            loading.update({ loading: false });
+        }
 
         const footer = new Footer();
         main.appendChild(footer.renderDOM());

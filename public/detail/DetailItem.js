@@ -33,15 +33,14 @@ class DetailItem extends Component {
         <a href="${detailItem.link}" target="blank"><h2 class="headline">${detailItem.title}</h2></a>
         <img src="${detailItem.image}" alt="">
         <div class="pub">
-            <p class="publication_date">${actualDate}</p>
-            <p class="byline">${(detailItem.author === null) ? '' : 'By' + detailItem.author}</p>
-            <p class="source">${detailItem.source_name}</p>
+            <p class="publication_date info">${actualDate}</p>
+            <p class="byline info">${(detailItem.author === null) ? '' : 'By ' + detailItem.author}</p>
+            <p class="source info">${detailItem.source_name}</p>
         </div>
-        <p class="summary">${(detailItem.description === null) ? '' : detailItem.description}</p>
-        <p class="content">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
+        <p class="content info">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
         <div class="links">
             
-            <button class="remove-button">Remove from Favorites</button>
+            <button class="remove-button"><img src="../assets/delete_yellow.png"></button>
         </div>
     </li>`;
     }
