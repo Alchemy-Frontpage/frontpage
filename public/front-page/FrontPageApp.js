@@ -23,7 +23,6 @@ class FrontPageApp extends Component {
 
         const main = dom.querySelector('main');
         const publisherList = dom.querySelector('#publisher-list');
-        console.log(publisherList);
 
         const frontPageList = new FrontPageList({
             frontPageItems: [],
@@ -63,15 +62,17 @@ class FrontPageApp extends Component {
         main.appendChild(frontPageList.renderDOM());
         // initial todo load:
         try {
-            let url = new URL(window.location + '#');
+            // window.location = window.location + '#';
+            // let url = new URL(window.location);
             
             const frontPageItems = await getFrontPage();
+            console.log(frontPageItems);
             this.state.frontPageItems = frontPageItems;
             frontPageList.update({ frontPageItems });
 
             let publishers = frontPageItems.reduce((acc, curr) => {
-                if (!acc.includes(curr.source.name)){
-                    acc.push(curr.source.name);
+                if (!acc.includes(curr.source.id)){
+                    acc.push(curr.source.id);
                 }
                 return acc;
             }, []);
@@ -84,8 +85,8 @@ class FrontPageApp extends Component {
                 publisherCheckbox.type = 'checkbox';
                 publisherCheckbox.value = publisher;
                 publisherSpan.appendChild(publisherCheckbox);
-                publisherCheckbox.addEventListener('change', () =>{
-
+                publisherCheckbox.addEventListener('change', event =>{
+                    location.hash += event.target.value + '&';
                 });
 
                 const publisherGap = document.createElement('span');
@@ -95,7 +96,6 @@ class FrontPageApp extends Component {
                 console.log(publisherSpan);
                 publisherList.appendChild(publisherSpan);
             });
-            console.log(publishers);
 
 
         } catch (err) {
