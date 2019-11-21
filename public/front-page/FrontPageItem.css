@@ -1,0 +1,62 @@
+.card-item {
+    max-width: 80%;
+    left: 10%;
+    border: 1px;
+    box-shadow: 2px 2px 7px 1px;
+    border-radius: 5px;
+    padding: 1rem;
+    position: absolute;
+    height: 70vh;
+    overflow: hidden;
+    background: white;
+    margin: 0 auto;
+    transition: 1s;
+    bottom: 50px;
+}
+
+.kept {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+.removed {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+.keep {
+    opacity: 0;
+    transform: translateX(100vw);
+}
+
+.remove {
+    opacity: 0;
+    transform: translateX(-100vw);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    bottom: 10px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, .5)
+}
+
+.buttons button {
+    font-size: 32px;
+    border-radius: 50%;
+}
+
+.card:hover {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+
+.author,
+.source {
+    margin: 0;
+    padding: 0;
+}
