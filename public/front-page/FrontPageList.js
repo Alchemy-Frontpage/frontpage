@@ -2,7 +2,7 @@ import Component from '../Component.js';
 import FrontPageItem from './FrontPageItem.js';
 
 class FrontPageList extends Component {
-    
+
     onRender(dom) {
         const frontPageItems = this.props.frontPageItems;
         const onFavorite = this.props.onFavorite;
@@ -17,13 +17,13 @@ class FrontPageList extends Component {
     }
 
     renderHTML() {
-        return /*html*/`
+        return /*html*/ `
 
         <div class='list-container'>
             <ul class="front-page-list">
             </ul>
         </div>
-            
+
         `;
     }
 }

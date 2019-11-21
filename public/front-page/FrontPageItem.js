@@ -5,22 +5,38 @@ class FrontPageItem extends Component {
     onRender(dom) {
         const frontPageItem = this.props.item;
         const onKeep = this.props.onFavorite;
-        const onRemove = this.props.onRemove;
+        // const onRemove = this.props.onRemove;
 
-
+        dom.addEventListener('swiped-right', function(e) {
+            console.log(e.target); // element that was swiped
+        });
+        dom.addEventListener('swiped-left', function(e) {
+            console.log(e.target); // element that was swiped
+        });
         const keepButton = dom.querySelector('.keep-button');
         keepButton.addEventListener('click', () => {
-            
-            //What functionality do we want to inlude here?
-
             onKeep(frontPageItem);
+            dom.classList.add('keep');
 
-            
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
+
+
         });
 
         const removeButton = dom.querySelector('.remove-button');
         removeButton.addEventListener('click', () => {
-            onRemove(frontPageItem);
+            // onRemove(frontPageItem);
+            dom.classList.add('remove');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
         });
 
 
@@ -29,8 +45,8 @@ class FrontPageItem extends Component {
     renderHTML() {
         const frontPageItem = this.props.item;
 
-        return /*html*/`
-            <li class = "front-page-item">
+        return /*html*/ `
+            <article class = "card-item">
                 <h1 class="headline">${(frontPageItem.title === null) ? '' : frontPageItem.title}</h1>
                 <img src="${frontPageItem.urlToImage}" alt="">
                 <div class="byline">
@@ -39,12 +55,11 @@ class FrontPageItem extends Component {
                 </div>
                 <p class="summary">${(frontPageItem.description === null) ? '' : frontPageItem.description}</p>
                 <div class="buttons">
-                    <button class="remove-button">Remove</button>
-                    <button class="keep-button">Keep</button>
+                    <button class="remove-button"><i class="fas fa-times"></i>
+                    </button>
+                    <button class="keep-button"><i class="fas fa-heart"></i></button>
                 </div>
-            </li>
-
-
+            </article>
         `;
 
 

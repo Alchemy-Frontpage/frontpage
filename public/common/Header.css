@@ -1,3 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header.header{ 
+  margin: 0;
+  padding: 0 0 90px 0;
+}
 .single-link {
   padding: 1rem;
     font-size: 1.2rem;
@@ -21,7 +29,7 @@
 .header {
   background-color:  #0075b8;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-  position: fixed;
+  /* position: fixed; */
   border-bottom: 4px solid #d2ec48;
   width: 100%;
   z-index: 3;
@@ -36,7 +44,7 @@
 
 .header li a {
   display: block;
-  padding: 20px 20px;
+  padding: 20px 0;
   text-decoration: none;
   
 }
@@ -100,7 +108,7 @@
 }
 
 .header .menu-btn:checked ~ .navbar_links {
-  max-height: 12em;
+  max-height: 50px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -120,7 +128,7 @@
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 1020px) {
   .header li {
     float: left;
   }
@@ -138,5 +146,8 @@
   }
   .header .menu-icon {
     display: none;
+  }
+  .header {
+    padding: 0 0 10px 0;
   }
 }

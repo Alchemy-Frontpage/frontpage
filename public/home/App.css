@@ -1,8 +1,13 @@
 .user-display, .no-display {
-    max-width: 25rem;
-    margin: 15rem auto;
+    max-width: 27rem;
+    height: 15rem;
+    margin: 5rem auto;
     padding: 30px;
      background: #ee5331;
+}
+main {
+    padding-top: 4rem;
+    font-size: 1.2rem;
 }
 #signin-container, #signup-container {
    max-width: 25rem;
