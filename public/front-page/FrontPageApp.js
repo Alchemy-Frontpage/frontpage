@@ -38,7 +38,6 @@ class FrontPageApp extends Component {
             }
         });
         main.appendChild(frontPageList.renderDOM());
-        // initial todo load:
         try {
             const frontPageItems = await getFrontPage();
             this.state.frontPageItems = frontPageItems;
