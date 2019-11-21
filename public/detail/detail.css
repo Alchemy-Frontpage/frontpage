@@ -5,7 +5,7 @@ main{
     text-shadow: 2px 2px 2px hsla(0, 0%, 8%, 1);
 }
 
-li{
+.detail-item{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +63,7 @@ p{
 }
 
 @media screen and (min-width: 720px){
-    li{
+    .detail-item{
         width: 690px;
     }
     img{
