@@ -13,6 +13,15 @@
     transition: 1s;
     bottom: 0;
 }
+.kept {
+    transform: translateX(100vw);
+    opacity: 0;
+}
+
+.removed {
+    transform: translateX(100vw);
+    opacity: 0;
+}
 
 .keep {
     opacity: 0;

@@ -23,16 +23,6 @@ img {
     max-width: 100%;
 }
 
-.kept {
-    transform: translateX(100vw);
-    opacity: 0;
-}
-
-.removed {
-    transform: translateX(100vw);
-    opacity: 0;
-}
-
 .byline {
     display: flex;
     flex-direction: row-reverse;
@@ -41,6 +31,7 @@ img {
 
 footer {
     position: fixed;
+    bottom: 0;
 }
 
 
