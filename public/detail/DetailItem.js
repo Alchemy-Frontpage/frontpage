@@ -37,8 +37,6 @@ class DetailItem extends Component {
             <p class="byline">${(detailItem.author === null) ? '' : 'By' + detailItem.author}</p>
             <p class="source">${detailItem.source_name}</p>
         </div>
-        
-        
         <p class="summary">${(detailItem.description === null) ? '' : detailItem.description}</p>
         <p class="content">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
         <div class="links">
