@@ -2,23 +2,33 @@
     width: 100%;
     left: 0%;
     border: 1px;
-    box-shadow: 2px 2px 7px 1px;
+    box-shadow: 0px 0px 2px 1px gray;
     border-radius: 5px;
     padding: 1rem;
     position: absolute;
     height: 70vh;
     overflow: hidden;
     background: white;
-    margin: 0 auto;
+    margin: 5px auto;
     transition: 1s;
     /* bottom: 50px; */
+}
+
+.byline,
+.summary {
+    padding: 0 35px;
 }
 
 @media screen and (min-width: 900px) {
     .card-item {
         width: 70%;
+        margin: 5px auto;
         left: 15%;
     }
+}
+
+.card-item h1 {
+    font-size: 1.2rem;
 }
 
 .kept {
@@ -44,11 +54,11 @@
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     bottom: 10px;
-    width: 100%;
+    width: 96%;
     position: absolute;
-    background-color: rgba(255, 255, 255, .5)
+    background-color: rgba(255, 255, 255, 0)
 }
 
 .buttons button {
