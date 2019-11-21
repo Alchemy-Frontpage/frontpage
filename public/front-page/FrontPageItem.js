@@ -5,15 +5,20 @@ class FrontPageItem extends Component {
     onRender(dom) {
         const frontPageItem = this.props.item;
         const onKeep = this.props.onFavorite;
-        const onRemove = this.props.onRemove;
+        // const onRemove = this.props.onRemove;
 
 
         const keepButton = dom.querySelector('.keep-button');
         keepButton.addEventListener('click', () => {
 
             onKeep(frontPageItem);
-            dom.remove();
-            // this.style.display = 'none';
+            dom.classList.add('keep');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
 
 
         });
@@ -21,9 +26,13 @@ class FrontPageItem extends Component {
         const removeButton = dom.querySelector('.remove-button');
         removeButton.addEventListener('click', () => {
             // onRemove(frontPageItem);
-            dom.style()
-            dom.remove();
-            console.log(this.event);
+            dom.classList.add('remove');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
         });
 
 
