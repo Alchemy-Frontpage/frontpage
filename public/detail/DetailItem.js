@@ -33,7 +33,7 @@ class DetailItem extends Component {
         <a href="${detailItem.link}" target="blank"><h2 class="headline">${detailItem.title}</h2></a>
         <p class="source-info">${detailItem.source_name}</p>
         <div class="image-container">
-        <img class="article-image" src="${detailItem.image}" alt="">
+        <img class="article-image" src="${detailItem.image}" onerror="this.src='../assets/jasmin.jpg';" alt="">
         </div>
         <div class="pub">
             <p class="publication_date info">${actualDate}</p>

@@ -72,6 +72,10 @@ a {
     outline: none;
 }
 
+.search {
+    margin-right: 5px;
+}
+
 input {
     border: 1px solid #0075b8;
     text-shadow: 1px 1px 1px  hsla(0, 0%, 8%, 1);

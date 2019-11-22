@@ -19,7 +19,7 @@ class FavoriteItem extends Component {
             <article>
             <div class="img-container">
             <a href="../detail/detail.html?id=${article.id}">
-                <img src="${article.image}">
+                <img src="${article.image}" onerror="this.src='../assets/jasmin.jpg';">
                 </div>
                     <h2>${article.title}</h2>   
                 </a>

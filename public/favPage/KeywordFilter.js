@@ -15,6 +15,7 @@ class KeywordFilter extends Component {
 
         clearButton.addEventListener('click', () => {
             this.props.onClear();
+            form.reset();
         });
     }
 
@@ -23,11 +24,11 @@ class KeywordFilter extends Component {
         <div class="search-container">
             <form class="keyword-search">
           
-                <input id="search" name="search" placeholder="Keywords">
+                <input id="search" name="search" placeholder="Search...">
             
-                <button class="search">Search 🔍</button>
+                <button class="search">🔍</button>
                 </form>
-                <button class="clear-search">Clear Search</button>
+                <button class="clear-search">Clear</button>
        
         </div>
         `;
