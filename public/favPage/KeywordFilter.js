@@ -20,20 +20,15 @@ class KeywordFilter extends Component {
 
     renderHTML() {
         return /*html*/`
-        <div class="search">
+        <div class="search-container">
             <form class="keyword-search">
-            <label for="search">Search by keyword:</label>
-            <p>
-                <input id="search" name="search">
-            </p>
-            <p>
-                <button class="search">Search 🔍</button>
-            </p>
+          
+                <input id="search" name="search" placeholder="Keywords">
             
-            </form>
-        <p>
-            <button class="clear-search">Clear Search</button>
-        </p>
+                <button class="search">Search 🔍</button>
+                </form>
+                <button class="clear-search">Clear Search</button>
+       
         </div>
         `;
     }

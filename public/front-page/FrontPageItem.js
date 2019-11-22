@@ -5,22 +5,51 @@ class FrontPageItem extends Component {
     onRender(dom) {
         const frontPageItem = this.props.item;
         const onKeep = this.props.onFavorite;
-        const onRemove = this.props.onRemove;
+        // const onRemove = this.props.onRemove;
 
+        dom.addEventListener('swiped-right', function() {
+            onKeep(frontPageItem);
+            dom.classList.add('keep');
 
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
+        });
+        dom.addEventListener('swiped-left', function() {
+            dom.classList.add('remove');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
+        });
         const keepButton = dom.querySelector('.keep-button');
         keepButton.addEventListener('click', () => {
-            
-            //What functionality do we want to inlude here?
-
             onKeep(frontPageItem);
+            dom.classList.add('keep');
 
-            
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
+
+
         });
 
         const removeButton = dom.querySelector('.remove-button');
         removeButton.addEventListener('click', () => {
-            onRemove(frontPageItem);
+            // onRemove(frontPageItem);
+            dom.classList.add('remove');
+
+            setTimeout(
+                function Remove() {
+                    dom.remove();
+                },
+                500);
         });
 
 
@@ -29,22 +58,21 @@ class FrontPageItem extends Component {
     renderHTML() {
         const frontPageItem = this.props.item;
 
-        return /*html*/`
-            <li class = "front-page-item">
+        return /*html*/ `
+            <article class = "card-item">
                 <h1 class="headline">${(frontPageItem.title === null) ? '' : frontPageItem.title}</h1>
-                <img src="${frontPageItem.urlToImage}" alt="">
+                <div class="image-container"><img src="${frontPageItem.urlToImage}" onerror="this.src='../assets/jasmin.jpg';"></div>
                 <div class="byline">
                     <p class="author">${(frontPageItem.author === null) ? '' : frontPageItem.author}</p>
                     <p class="source">${(frontPageItem.source.name === null) ? '' : frontPageItem.source.name}</p>
                 </div>
                 <p class="summary">${(frontPageItem.description === null) ? '' : frontPageItem.description}</p>
                 <div class="buttons">
-                    <button class="remove-button">Remove</button>
-                    <button class="keep-button">Keep</button>
+                    <button class="remove-button"><i class="fas fa-times"></i>
+                    </button>
+                    <button class="keep-button"><i class="fas fa-heart"></i></button>
                 </div>
-            </li>
-
-
+            </article>
         `;
 
 

@@ -6,7 +6,7 @@ class Header extends Component {
         
         return /*html*/ `
             <header class="header">
-                <a href="#" class="logo">Swiping for the hottest news</a>
+                <a href="#" class="logo"> news</a>
                 <input class="menu-btn" type="checkbox" id="menu-btn">
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="navbar_links">
@@ -21,10 +21,13 @@ class Header extends Component {
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="single-link">About Us
+                        <a href="../about/index.html" class="single-link">About Us
                             <i class="fas fa-users"></i>
                         </a>
                     </li>
+                    <li>
+                    <a href="../index.html" class="single-link">Logout<i class="fas fa-user-circle"></i>
+                    </a>
                 </ul>
         </header>
         </header>

@@ -26,16 +26,22 @@ class DetailItem extends Component {
 
         const date = new Date(detailItem.date);
         const actualDate = date.toDateString();
+        const content = (detailItem.content === null) ? '' : detailItem.content;
+        const splicedContent = content.slice(0, 260);
 
         return /*html*/ `<li class = "detail-item">
-        <h1 class="headline"><a href="${detailItem.link}" target="blank">${detailItem.title}</a></h1>
-        <img src="${detailItem.image}" alt="">
-        <p class="publication_date">${actualDate}</p>
-        <p class="byline">${(detailItem.author === null) ? '' : detailItem.author}</p>
-        <p class="source">${detailItem.source_name}</p>
-        <p class="summary">${(detailItem.description === null) ? '' : detailItem.description}</p>
-        <p class="content">${(detailItem.content === null) ? '' : detailItem.content}</p>
-        <button class="remove-button">Remove from Favorites</button>
+        <a href="${detailItem.link}" target="blank"><h2 class="headline">${detailItem.title}</h2></a>
+        <p class="source-info">${detailItem.source_name}</p>
+        <img class="article-image" src="${detailItem.image}" alt="">
+        <div class="pub">
+            <p class="publication_date info">${actualDate}</p>
+            <p class="byline info">${(detailItem.author === null) ? '' : ' |  By ' + detailItem.author}</p>
+        </div>
+        <p class="content info">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
+        <div class="links">
+            
+            <button class="remove-button"><img class="delete-button"src="../assets/delete_yellow.png"></button>
+        </div>
     </li>`;
     }
 }

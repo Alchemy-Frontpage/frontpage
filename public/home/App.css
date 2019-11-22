@@ -1,31 +1,48 @@
+
 .user-display, .no-display {
-    max-width: 25rem;
-    margin: 15rem auto;
-    padding: 30px;
-     background: #ee5331;
+    max-width: 27rem;
+    height: 15rem;
+    margin: auto;
+    padding-top: 40px;
+    background: #ee5331;
+    border: 10px solid #27a16c
+}
+main {
+    padding-top: 10vh;
+    font-size: 1.2rem;
 }
 #signin-container, #signup-container {
    max-width: 25rem;
     margin: 30px auto;
     padding: 30px;
+    outline: none;
      background: #ee5331;  
 }
-fieldset {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20rem;
-  padding: 1.5rem;
-  text-align: center;
-  border: 1.3rem solid #27a16c;
-   background: #0075b8;
+.sign-in {
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  outline: none;
+  box-shadow: 1px 1px 1px 1px black;
 }
-legend {
-  font-size: 1.4rem;
-  color: #0e5883;
-  text-shadow:  black;
-  background: #27a16c;
+.sign-up {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
 }
+#signup-button {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+#signin-button {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
 form p {
     margin: 10px 0;
    
@@ -50,28 +67,11 @@ main p.errors, .user-display {
 .no-display {
     display: none;
 }
-.sign-in, .sign-up {
-    text-align: center;
-  outline: none;
-  border: 2px solid #ee5331;
-  border-radius: 5px;
-  background: #ee5331;
-  box-shadow: 2px 2px 3px 2px hsla(0, 0%, 8%, 1);
-}
-#signup-button, #signin-button {
- background: #ee5331;
- border: 2px solid  #ee5331;
-margin-bottom: 2rem;
-box-shadow: 2px 2px 3px 2px hsla(0, 0%, 8%, 1);
-text-align: center;
-outline: none;
-}
 p.switch, p {
     text-align: center;
     padding: 0.5rem;
 }
 #signup-container, #signin-container {
-margin-top: 9rem;
 border: 10px solid #27a16c
 }
 label {
@@ -79,3 +79,12 @@ label {
     width: 80px;
     margin: 0.5rem;
 } 
+.logout {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+
+

@@ -23,7 +23,7 @@ class SignUp extends Component {
     renderHTML() {
         return /*html*/`
       <fieldset> 
-      <legend>Get Your News On</legend>    
+       
     <form class="auth-form standard">
       <p>
             <label for="email">Email</label>
