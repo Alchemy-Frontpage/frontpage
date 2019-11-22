@@ -3,18 +3,44 @@
     max-width: 27rem;
     height: 15rem;
     margin: auto;
-    padding: 30px;
-     background: #ee5331;
+    padding-top: 40px;
+    background: #ee5331;
+    border: 10px solid #27a16c
 }
 main {
-    padding-top: 4rem;
+    padding-top: 10vh;
     font-size: 1.2rem;
 }
 #signin-container, #signup-container {
    max-width: 25rem;
     margin: 30px auto;
     padding: 30px;
+    outline: none;
      background: #ee5331;  
+}
+.sign-in {
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  outline: none;
+  box-shadow: 1px 1px 1px 1px black;
+}
+.sign-up {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+#signup-button {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+#signin-button {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
 }
 
 form p {
@@ -41,22 +67,6 @@ main p.errors, .user-display {
 .no-display {
     display: none;
 }
-.sign-in, .sign-up {
-    text-align: center;
-  outline: none;
-  border: 2px solid #ee5331;
-  border-radius: 5px;
-  background: #ee5331;
-  box-shadow: 2px 2px 3px 2px hsla(0, 0%, 8%, 1);
-}
-#signup-button, #signin-button {
- background: #ee5331;
- border: 2px solid  #ee5331;
-
-box-shadow: 2px 2px 3px 2px hsla(0, 0%, 8%, 1);
-text-align: center;
-outline: none;
-}
 p.switch, p {
     text-align: center;
     padding: 0.5rem;
@@ -69,4 +79,12 @@ label {
     width: 80px;
     margin: 0.5rem;
 } 
+.logout {
+    outline: none;
+  background:  #ee5331;
+  border: 2px solid #ee5331;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+
 

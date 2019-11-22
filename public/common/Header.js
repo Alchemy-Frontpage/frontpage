@@ -25,6 +25,9 @@ class Header extends Component {
                             <i class="fas fa-users"></i>
                         </a>
                     </li>
+                    <li>
+                    <a href="../index.html" class="single-link">Logout<i class="fas fa-user-circle"></i>
+                    </a>
                 </ul>
         </header>
         </header>
