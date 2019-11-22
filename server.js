@@ -57,7 +57,7 @@ app.use('/api', ensureAuth);
 // API Routes
 app.get('/api/news', async (req, res) => {
     try {
-        let rawNews = await superagent.get('https://newsapi.org/v2/top-headlines?language=en').set(`X-Api-Key`, `${NEWS_API_KEY}`);
+        let rawNews = await superagent.get('https://newsapi.org/v2/top-headlines?language=en&pageSize=100').set(`X-Api-Key`, `${NEWS_API_KEY}`);
         const news = JSON.parse(rawNews.text).articles;
         console.log(news);
         
@@ -139,9 +139,12 @@ app.get('/api/favorites/filter', async (req, res) => {
             FROM   favorites
             WHERE  user_id = $1
             AND title LIKE $2
-            OR title LIKE $3
-            OR content LIKE $2
-            OR content LIKE $3
+            OR  user_id = $1
+            AND title LIKE $3
+            OR  user_id = $1
+            AND content LIKE $2 
+            OR  user_id = $1
+            AND content LIKE $3
         `, [req.userId, `%${searchInputToUppercase}%`, `%${req.query.search}%`]);
         console.log(result);
         res.status(200).json(result.rows);
