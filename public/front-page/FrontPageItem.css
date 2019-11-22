@@ -27,6 +27,9 @@
     }
 }
 
+#default-image{
+    z-index: -1;
+}
 .card-item h1 {
     font-size: 1.2rem;
 }
