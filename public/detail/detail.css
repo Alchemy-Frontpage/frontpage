@@ -27,8 +27,10 @@ li img{
     margin: 0 auto;
 }
 
-button img{
-    width: 30px;
+button{
+    border: 2px solid black;
+    background-color: #d2ec48;
+    border-radius: 2px;
 }
 
 a{
