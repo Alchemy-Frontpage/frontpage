@@ -1,0 +1,21 @@
+#publisher-list {
+    position: absolute;
+    top: 60px;
+    margin: 5px;
+    background-color: #d2eb4b;
+    display: none;
+    padding: 10px;
+}
+
+#publisher-list p {
+    width: 150px;
+    background-color: transparent;
+}
+
+#filter-button{
+    background-color: transparent;
+    color: #d2eb4b;
+    border: none;
+    outline: none;
+    font-size: 25px;
+}
