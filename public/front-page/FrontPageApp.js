@@ -39,10 +39,10 @@ class FrontPageApp extends Component {
             }
         });
         main.appendChild(frontPageList.renderDOM());
-        // initial todo load:
         try {
-            // window.location = window.location + '#';
-            // let url = new URL(window.location);
+            if (!window.location.href.includes('#')){
+                window.location = window.location + '#';
+            }
             
             const frontPageItems = await getFrontPage();
             console.log(frontPageItems);
@@ -64,24 +64,36 @@ class FrontPageApp extends Component {
                 publisherCheckbox.type = 'checkbox';
                 publisherCheckbox.value = publisher;
                 publisherSpan.appendChild(publisherCheckbox);
-                publisherCheckbox.addEventListener('change', event =>{
-                    if (this.checked){
-                        location.hash += event.target.value + '&';
-                    } else {
-                        let spliceThisUrl = window.location;
-                        const hashLocation = spliceThisUrl.indexOf(event.target.value);
-                        spliceThisUrl.splice(hashlocation, );
-                    }
-                });
 
                 const publisherGap = document.createElement('span');
                 publisherGap.textContent = ' ';
                 publisherSpan.appendChild(publisherGap);
 
-                console.log(publisherSpan);
+                publisherCheckbox.addEventListener('change', event =>{
+                    if (event.target.checked){
+                        location.hash += event.target.value + '&';
+                    } else {
+                        let spliceThisHash = location.hash.slice(1).split('&');
+                        console.log(`spliceThisHash: ${spliceThisHash}`);
+                        const targetIndex = spliceThisHash.indexOf(event.target.value);
+                        spliceThisHash.splice(targetIndex, 1);
+                        const hashMinusRemoved = spliceThisHash.join('&');
+                        location.hash = hashMinusRemoved;
+                    }
+                });
+
                 publisherList.appendChild(publisherSpan);
             });
-
+            window.addEventListener('hashchange', () => {
+                const blacklist = location.hash
+                    .slice(1).split('&');
+                const newItems = frontPageItems.filter(article => {
+                    if (!blacklist.includes(article.source.id)){
+                        return article;
+                    }
+                });
+                frontPageList.update({ frontPageItems: newItems });
+            });
 
         } catch (err) {
             console.log('Update News List failed\n', err);
