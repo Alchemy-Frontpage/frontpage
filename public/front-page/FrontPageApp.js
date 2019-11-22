@@ -21,6 +21,7 @@ class FrontPageApp extends Component {
         dom.appendChild(loading.renderDOM());
 
         const main = dom.querySelector('main');
+        const publisherList = dom.querySelector('#publisher-list');
 
         const frontPageList = new FrontPageList({
             frontPageItems: [],
@@ -37,10 +38,47 @@ class FrontPageApp extends Component {
         });
         main.appendChild(frontPageList.renderDOM());
         try {
+            // window.location = window.location + '#';
+            // let url = new URL(window.location);
+            
             const frontPageItems = await getFrontPage();
+            console.log(frontPageItems);
             this.state.frontPageItems = frontPageItems;
-
             frontPageList.update({ frontPageItems });
+
+            let publishers = frontPageItems.reduce((acc, curr) => {
+                if (!acc.includes(curr.source.id)){
+                    acc.push(curr.source.id);
+                }
+                return acc;
+            }, []);
+            publishers = publishers.sort();
+            publishers.forEach(publisher => {
+                let publisherSpan = document.createElement('span');
+                publisherSpan.textContent = publisher;
+
+                const publisherCheckbox = document.createElement('input');
+                publisherCheckbox.type = 'checkbox';
+                publisherCheckbox.value = publisher;
+                publisherSpan.appendChild(publisherCheckbox);
+                publisherCheckbox.addEventListener('change', event =>{
+
+                    location.hash += event.target.value + '&';
+                });
+
+                // let updatedString = (str) => {
+                //     str.split('&').splice(index).join('&');
+                //     return updatedString;
+                // };
+
+                const publisherGap = document.createElement('span');
+                publisherGap.textContent = ' ';
+                publisherSpan.appendChild(publisherGap);
+
+                console.log(publisherSpan);
+                publisherList.appendChild(publisherSpan);
+            });
+
 
         } catch (err) {
             console.log('Update News List failed\n', err);
@@ -59,6 +97,7 @@ class FrontPageApp extends Component {
                 <!-- header goes here -->
                 <!-- show errors: -->
                 <p class="error"></p>
+                <div id="publisher-list"><div>
                 <main class="cards-container">
                     <!-- add todo goes here -->
                     <!-- todo list goes here -->

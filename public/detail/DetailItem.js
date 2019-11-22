@@ -31,16 +31,16 @@ class DetailItem extends Component {
 
         return /*html*/ `<li class = "detail-item">
         <a href="${detailItem.link}" target="blank"><h2 class="headline">${detailItem.title}</h2></a>
-        <img src="${detailItem.image}" alt="">
+        <p class="source-info">${detailItem.source_name}</p>
+        <img class="article-image" src="${detailItem.image}" alt="">
         <div class="pub">
             <p class="publication_date info">${actualDate}</p>
-            <p class="byline info">${(detailItem.author === null) ? '' : 'By ' + detailItem.author}</p>
-            <p class="source info">${detailItem.source_name}</p>
+            <p class="byline info">${(detailItem.author === null) ? '' : ' |  By ' + detailItem.author}</p>
         </div>
         <p class="content info">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
         <div class="links">
             
-            <button class="remove-button"><img src="../assets/delete_yellow.png"></button>
+            <button class="remove-button"><img class="delete-button"src="../assets/delete_yellow.png"></button>
         </div>
     </li>`;
     }
