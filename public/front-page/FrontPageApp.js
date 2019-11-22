@@ -5,15 +5,11 @@ import Loading from '../common/Loading.js';
 import FrontPageList from './FrontPageList.js';
 import { getFrontPage, addFavorite } from '../services/domain-api.js';
 
-// document.addEventListener('DOMContentLoaded', function(event) {
-//     // DOM fully loaded and parsed
-
-//     function stackedCards() {
-//         // Our code will go here
-//     }
-
-//     stackedCards();
-// });
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('img').forEach(function(img) {
+        img.onerror = function() { this.style.display = 'none'; };
+    });
+});
 
 class FrontPageApp extends Component {
 
@@ -37,9 +33,10 @@ class FrontPageApp extends Component {
                     console.log(err);
                 }
             }
+
+
         });
         main.appendChild(frontPageList.renderDOM());
-        // initial todo load:
         try {
             // window.location = window.location + '#';
             // let url = new URL(window.location);
@@ -85,8 +82,7 @@ class FrontPageApp extends Component {
 
         } catch (err) {
             console.log('Update News List failed\n', err);
-        }
-        finally {
+        } finally {
             loading.update({ loading: false });
         }
 

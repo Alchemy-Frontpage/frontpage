@@ -3,7 +3,7 @@
   margin: 0;
 }
 .single-link {
-  padding: 1rem;
+  padding: 1.5rem;
     font-size: 0.7rem;
     text-decoration: none;
     text-transform: capitalize;
@@ -26,6 +26,7 @@
   background-color:  #0075b8;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;
+  top: 0;
   border-bottom: 4px solid #d2ec48;
   width: 100%;
   z-index: 3;
@@ -40,7 +41,7 @@
 
 .header li a {
   display: block;
-  padding: 20px 0;
+  padding: 10px 15px;
   text-decoration: none;
   
 }
@@ -92,11 +93,11 @@
 }
 
 .header .menu-icon .navicon:before {
-  top: 5px;
+  top: 10px;
 }
 
 .header .menu-icon .navicon:after {
-  top: -5px;
+  top: -10px;
 }
 
 .header .menu-btn {
