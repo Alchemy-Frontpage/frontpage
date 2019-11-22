@@ -19,3 +19,28 @@
     outline: none;
     font-size: 25px;
 }
+
+footer nav {
+    display: flex;
+    height: 2rem;
+}
+
+footer nav a {
+    text-decoration: none;
+}
+footer img {
+    height: 30px;
+    margin: 2px 75px;
+}
+
+footer {
+    background-color: #0075b8;
+    border-top: 3px solid #d2ec48;
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+}
+

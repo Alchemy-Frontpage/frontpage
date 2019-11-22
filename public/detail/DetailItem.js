@@ -12,18 +12,6 @@ class DetailItem extends Component {
     renderHTML() {
         const detailItem = this.props.article;
 
-        // let description = '';
-        // if (detailItem.description) {
-        //     description = detailItem.description;
-        // } else {
-        //     description = detailItem.content.slice(0, 49);
-        // }
-
-        // let content = '';
-        // if (detailItem.content){
-        //     content = detailItem.content;
-        // } else 
-
         const date = new Date(detailItem.date);
         const actualDate = date.toDateString();
         const content = (detailItem.content === null) ? '' : detailItem.content;
@@ -40,10 +28,10 @@ class DetailItem extends Component {
             <p class="byline info">${(detailItem.author === null) ? '' : ' |  By ' + detailItem.author}</p>
         </div>
         <p class="content info">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
-      
+    
             
             <button class="remove-button"><img class="delete-button"src="../assets/delete_yellow.png"></button>
-      
+
     </li>`;
     }
 }

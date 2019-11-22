@@ -15,21 +15,19 @@ class SignUp extends Component {
                 email: formData.get('email'),
                 password: formData.get('password')
             };
-
             onSignUp(user);
         });
     }
 
     renderHTML() {
         return /*html*/`
-      <fieldset> 
-       
+    <fieldset> 
+    
     <form class="auth-form standard">
-      <p>
+    <p>
             <label for="email">Email</label>
             <input id="email" type="email" name="email" required placeholder="you@somewhere.com">
         </p>
-    
         <p>
             <label for="password">Password</label>
             <input id="password" type="password" name="password" required>
@@ -39,12 +37,7 @@ class SignUp extends Component {
         </p>
     </form>
     </fieldset>
-    
         `;
     }
 }
-
 export default SignUp;
-
-{/* <fieldset>
-    <legend>Get Your News On</legend> </fieldset> */}

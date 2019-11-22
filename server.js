@@ -27,7 +27,6 @@ const authRoutes = createAuthRoutes({
             .then(result => result.rows[0]);
     },
     insertUser(user, hash) {
-        console.log(user);
         return client
             .query(
                 `
@@ -41,7 +40,6 @@ const authRoutes = createAuthRoutes({
     }
 });
 
-
 // Application Setup
 const app = express();
 const PORT = process.env.PORT;
@@ -53,13 +51,11 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api', ensureAuth);
 
-
 // API Routes
 app.get('/api/news', async (req, res) => {
     try {
         let rawNews = await superagent.get('https://newsapi.org/v2/top-headlines?language=en&pageSize=100').set(`X-Api-Key`, `${NEWS_API_KEY}`);
         const news = JSON.parse(rawNews.text).articles;
-        console.log(news);
         
         const titleLookup = news.reduce((acc, curr) => {
             if (!acc[curr.title]) {
@@ -70,7 +66,6 @@ app.get('/api/news', async (req, res) => {
         }, {});
 
         const deduplicatedTitles = Object.values(titleLookup);
-
 
         res.status(200).json(deduplicatedTitles);
     }
@@ -112,13 +107,11 @@ app.post('/api/favorites', async (req, res) => {
 
 app.get('/api/favorites', async (req, res) => {
     try {
-        console.log(req.query);
         const result = await client.query(`
             SELECT *
             FROM   favorites
             WHERE  user_id = $1
         `, [req.userId]);
-        console.log(result);
         res.status(200).json(result.rows);
     }
     catch (err){
@@ -129,7 +122,6 @@ app.get('/api/favorites', async (req, res) => {
 
 app.get('/api/favorites/filter', async (req, res) => {
     try {
-        console.log(req.query);
         const searchInput = req.query.search;
 
         const searchInputToUppercase = searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
@@ -146,7 +138,6 @@ app.get('/api/favorites/filter', async (req, res) => {
             OR  user_id = $1
             AND content LIKE $3
         `, [req.userId, `%${searchInputToUppercase}%`, `%${req.query.search}%`]);
-        console.log(result);
         res.status(200).json(result.rows);
     }
     catch (err){

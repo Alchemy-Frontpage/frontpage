@@ -11,7 +11,6 @@ class DetailApp extends Component {
 
         const main = dom.querySelector('main');
 
-        //extracting query param for id of article to get
         const searchParams = new URLSearchParams(window.location.search);
         const id = searchParams.get('id');
         if (!id) {
@@ -46,8 +45,6 @@ class DetailApp extends Component {
     renderHTML() {
         return /*html*/ `
             <div>
-                <!-- header goes here -->
-                <!-- show errors: -->
                 <p class="error"></p>
                 <main>
 

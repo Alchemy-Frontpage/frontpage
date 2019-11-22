@@ -22,14 +22,13 @@ class SignIn extends Component {
 
     renderHTML() {
         return /*html*/`
-          <fieldset>  
-         
+        <fieldset>  
+        
     <form class="auth-form standard">
         <p>
             <label for="signin-email">Email:</label>
             <input id="signin-email" type="email" name="email" required placeholder="you@somewhere.com">
         </p>
-
         <p>
             <label for="signin-password">Password:</label>
             <input id="signin-password" type="password" name="password" required>
@@ -39,10 +38,7 @@ class SignIn extends Component {
         </p>
     </form>
     </fieldset>
-    
         `;
     }
 }
-
 export default SignIn;
-// <fieldset><legend>Welcome Back</legend></fieldset>

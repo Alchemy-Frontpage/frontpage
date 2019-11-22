@@ -39,10 +39,10 @@ main{
     margin-top: 1rem;
 }
 .image-container {
-  margin: 0 auto;
-     height: 100%;
-     width: 90%;
-     overflow: hidden;
+    margin: 0 auto;
+    height: 100%;
+    width: 90%;
+    overflow: hidden;
 }
 
 button:active {

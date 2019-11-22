@@ -13,7 +13,6 @@ class FavPageApp extends Component {
 
         const keywordFilter = new KeywordFilter({ 
             onSubmit: async (searchQuery) => {
-
                 const articles = await getFavoritesFilter(searchQuery);
                 favoriteList.update({ articles });
             },
@@ -23,7 +22,6 @@ class FavPageApp extends Component {
             }
         });
         main.appendChild(keywordFilter.renderDOM());
-
         
         const favoriteList = new FavoriteList({
             articles: [],
@@ -39,7 +37,6 @@ class FavPageApp extends Component {
             }
         });
         main.appendChild(favoriteList.renderDOM());
-
 
         try {
             let articles = await getFavorites();

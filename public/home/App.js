@@ -11,14 +11,10 @@ function success(user) {
     const searchParams = new URLSearchParams(location.search);
     location = searchParams.get('redirect') || '../front-page/front-page.html';
 }
-
-
 class App extends Component {
-
     onRender(dom) {
         const header = new Header();
         dom.prepend(header.renderDOM());
-    
 
         const user = localStorage.getItem('USER');
         if (user) {
@@ -63,7 +59,6 @@ class App extends Component {
                 }
             }
         });
-
         signInContainer.appendChild(signIn.renderDOM());
 
         const switchToSignIn = dom.querySelector('#signin-button');

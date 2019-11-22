@@ -15,7 +15,6 @@ async function fetchWithError(url, options) {
         options.headers = options.headers || {};
         options.headers.Authorization = token;
     }
-
     const response = await fetch(url, options);
     const data = await response.json();
 

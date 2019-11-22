@@ -14,7 +14,6 @@ class FrontPageApp extends Component {
         dom.appendChild(loading.renderDOM());
 
         const main = dom.querySelector('main');
-        console.log(main);
         const publisherList = dom.querySelector('#publisher-list');
 
         const frontPageList = new FrontPageList({
@@ -30,9 +29,6 @@ class FrontPageApp extends Component {
         });
         main.appendChild(frontPageList.renderDOM());
         try {
-            // window.location = window.location + '#';
-            // let url = new URL(window.location);
-            
             const frontPageItems = await getFrontPage();
             this.state.frontPageItems = frontPageItems;
             frontPageList.update({ frontPageItems });
@@ -58,22 +54,12 @@ class FrontPageApp extends Component {
                         location.hash += event.target.value + '&';
                     } else {
                         let spliceThisHash = location.hash.slice(1).split('&');
-                        console.log(`spliceThisHash: ${spliceThisHash}`);
                         const targetIndex = spliceThisHash.indexOf(event.target.value);
                         spliceThisHash.splice(targetIndex, 1);
                         const hashMinusRemoved = spliceThisHash.join('&');
                         location.hash = hashMinusRemoved;
                     }
                 });
-
-                // let updatedString = (str) => {
-                //     str.split('&').splice(index).join('&');
-                //     return updatedString;
-                // };
-
-                // const publisherGap = document.createElement('span');
-                // publisherGap.textContent = ' ';
-                // publisherSpan.appendChild(publisherGap);
                 publisherList.appendChild(publisherSpan);
             });
 
@@ -100,13 +86,11 @@ class FrontPageApp extends Component {
         const filterButton = dom.querySelector('#filter-button');
         filterButton.addEventListener('click', () => {
             const filterArea = dom.querySelector('#publisher-list');
-            console.log(filterArea);
             if (filterArea.style.display === 'block'){
                 filterArea.style.display = 'none';
             } else {
                 filterArea.style.display = 'block';
             }
-            //.style.display = 'block';
         });
     }
 
