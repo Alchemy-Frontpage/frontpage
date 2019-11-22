@@ -4,15 +4,15 @@
 }
 .single-link {
   padding: 1.5rem;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-decoration: none;
     text-transform: capitalize;
-    color: #27a16c;
+    color: #d2ec48;
     background: hsl(202, 81%, 28%);
     text-shadow: 1px 1px 1px hsla(0, 0%, 8%, 1);
 }
 .single-link:hover {
-    color: #d2ec48;
+    color: #27a16c;
     background: #0075b8;
 }
 .logo {
@@ -23,6 +23,7 @@
 }
 
 .header {
+   font-family: 'Calistoga', cursive;
   background-color:  #0075b8;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;

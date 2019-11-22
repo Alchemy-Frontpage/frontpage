@@ -2,9 +2,9 @@
     position: relative;
     height: 40px;
 } */
-header.header {
+/* header.header {
     padding: 0
-}
+} */
 
 ul {
     list-style: none;
@@ -38,11 +38,11 @@ img {
     justify-content: space-around;
 }
 
-footer {
+/* footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+} */
 
 
 
