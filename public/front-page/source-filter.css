@@ -2,17 +2,19 @@
     position: absolute;
     top: 60px;
     margin: 5px;
-    width: 20px;
-    height: 20px;
-    background-color: #ee5331;
+    background-color: #d2eb4b;
+    display: none;
 }
 
 #publisher-list p {
-    display: none;
     width: 150px;
-    background-color: purple
+    background-color: transparent;
 }
 
-#publisher-list:hover p {
-    display: block;
+#filter-button{
+    background-color: transparent;
+    color: #d2eb4b;
+    border: none;
+    outline: none;
+    font-size: 25px;
 }

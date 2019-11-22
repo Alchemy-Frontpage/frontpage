@@ -1,16 +1,9 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
-import Footer from '../common/Footer.js';
+import Footer from '../common/frontFooter.js';
 import Loading from '../common/Loading.js';
 import FrontPageList from './FrontPageList.js';
 import { getFrontPage, addFavorite } from '../services/domain-api.js';
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('img').forEach(function(img) {
-        img.onerror = function() { this.style.display = 'none'; };
-    });
-});
-
 class FrontPageApp extends Component {
 
     async onRender(dom) {
@@ -104,6 +97,17 @@ class FrontPageApp extends Component {
         const footer = new Footer();
         main.appendChild(footer.renderDOM());
 
+        const filterButton = dom.querySelector('#filter-button');
+        filterButton.addEventListener('click', () => {
+            const filterArea = dom.querySelector('#publisher-list');
+            console.log(filterArea);
+            if (filterArea.style.display === 'block'){
+                filterArea.style.display = 'none';
+            } else {
+                filterArea.style.display = 'block';
+            }
+            //.style.display = 'block';
+        });
     }
 
     renderHTML() {
@@ -111,7 +115,8 @@ class FrontPageApp extends Component {
             <div>
                 <p class="error"></p>
                 <main class="cards-container"></main>
-                <div id="publisher-list"><div>
+                <div id="publisher-list"></div>
+                <button id="filter-button">BUTTON</button>
             </div>
         `;
     }
