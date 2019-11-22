@@ -7,22 +7,13 @@ class FavoriteItem extends Component {
         
 
         const removeButton = dom.querySelector('.delete-fav');
-        removeButton.addEventListener('click', event => {
-            // event.preventDefault();
+        removeButton.addEventListener('click', () => {
             onDelete(article);
-            //.console.log(article);
         });
     }
     
     renderHTML(){
         const article = this.props.article;
-
-        let description = '';
-        if (article.description){
-            description = article.description;
-        } else {
-            description = article.content.slice(0, 49);
-        }
 
         return /*html*/`
             <article>

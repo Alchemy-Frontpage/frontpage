@@ -1,10 +1,6 @@
 * {
     margin: 0 
 }
-main {
-    padding-top: 10vh;
-}
-
 .img-container img {
     height: auto;
     /* margin: 1rem; */
@@ -99,9 +95,3 @@ input {
 
 
 
-
-/* light blue - #0075b8
-dark blue - #0e5883
-green - #27a16c
-yellow - #d2ec48
-orange - #ee5331 */
