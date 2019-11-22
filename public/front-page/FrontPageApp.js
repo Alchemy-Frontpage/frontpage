@@ -44,8 +44,7 @@ class FrontPageApp extends Component {
 
         } catch (err) {
             console.log('Update News List failed\n', err);
-        }
-        finally {
+        } finally {
             loading.update({ loading: false });
         }
 
