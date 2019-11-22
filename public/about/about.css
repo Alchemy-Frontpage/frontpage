@@ -4,7 +4,7 @@
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     width: 80%;
-    margin: auto;
+    margin: 80px auto 80px auto;
 }
     
 h1 {
@@ -24,4 +24,4 @@ p {
 img {
     max-width: 100%;
 }
-
+ 
