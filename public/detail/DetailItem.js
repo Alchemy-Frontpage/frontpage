@@ -32,7 +32,7 @@ class DetailItem extends Component {
         return /*html*/ `<li class = "detail-item">
         <a href="${detailItem.link}" target="blank"><h2 class="headline">${detailItem.title}</h2></a>
         <p class="source-info">${detailItem.source_name}</p>
-        <img class="article-image" src="${detailItem.image}" alt="">
+        <img class="article-image" src="${detailItem.image}" onerror="this.src='../assets/jasmin.jpg';" alt="">
         <div class="pub">
             <p class="publication_date info">${actualDate}</p>
             <p class="byline info">${(detailItem.author === null) ? '' : ' |  By ' + detailItem.author}</p>
