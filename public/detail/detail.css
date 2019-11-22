@@ -20,7 +20,7 @@ main{
     flex-direction: row;
     /* justify-content: space-between; */
     width: 80%;
-    margin: auto;
+    margin: 5px auto;
 }
 
 .byline{
@@ -50,6 +50,7 @@ button:active {
 }
 
 .remove-button img{
+
     width: 30px;    
 }
 
@@ -60,6 +61,7 @@ button:active {
 }
 
 .remove-button {
+    margin-top: 27px;
     background: transparent;
     border: none;
     outline: none;

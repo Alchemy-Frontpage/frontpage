@@ -40,10 +40,10 @@ class DetailItem extends Component {
             <p class="byline info">${(detailItem.author === null) ? '' : ' |  By ' + detailItem.author}</p>
         </div>
         <p class="content info">${splicedContent}<a href="${detailItem.link}" class="article-link">Full Article</a></p>
-        <div class="links">
+      
             
             <button class="remove-button"><img class="delete-button"src="../assets/delete_yellow.png"></button>
-        </div>
+      
     </li>`;
     }
 }
