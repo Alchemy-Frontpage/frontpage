@@ -42,42 +42,41 @@ class FrontPageApp extends Component {
             // let url = new URL(window.location);
             
             const frontPageItems = await getFrontPage();
-            console.log(frontPageItems);
             this.state.frontPageItems = frontPageItems;
             frontPageList.update({ frontPageItems });
 
-            let publishers = frontPageItems.reduce((acc, curr) => {
-                if (!acc.includes(curr.source.id)){
-                    acc.push(curr.source.id);
-                }
-                return acc;
-            }, []);
-            publishers = publishers.sort();
-            publishers.forEach(publisher => {
-                let publisherSpan = document.createElement('span');
-                publisherSpan.textContent = publisher;
+            // let publishers = frontPageItems.reduce((acc, curr) => {
+            //     if (!acc.includes(curr.source.id)){
+            //         acc.push(curr.source.id);
+            //     }
+            //     return acc;
+            // }, []);
+            // publishers = publishers.sort();
+            // publishers.forEach(publisher => {
+            //     let publisherSpan = document.createElement('span');
+            //     publisherSpan.textContent = publisher;
 
-                const publisherCheckbox = document.createElement('input');
-                publisherCheckbox.type = 'checkbox';
-                publisherCheckbox.value = publisher;
-                publisherSpan.appendChild(publisherCheckbox);
-                publisherCheckbox.addEventListener('change', event =>{
+            //     const publisherCheckbox = document.createElement('input');
+            //     publisherCheckbox.type = 'checkbox';
+            //     publisherCheckbox.value = publisher;
+            //     publisherSpan.appendChild(publisherCheckbox);
+            //     publisherCheckbox.addEventListener('change', event =>{
 
-                    location.hash += event.target.value + '&';
-                });
+            //         location.hash += event.target.value + '&';
+            //     });
 
-                // let updatedString = (str) => {
-                //     str.split('&').splice(index).join('&');
-                //     return updatedString;
-                // };
+            //     // let updatedString = (str) => {
+            //     //     str.split('&').splice(index).join('&');
+            //     //     return updatedString;
+            //     // };
 
-                const publisherGap = document.createElement('span');
-                publisherGap.textContent = ' ';
-                publisherSpan.appendChild(publisherGap);
+            //     const publisherGap = document.createElement('span');
+            //     publisherGap.textContent = ' ';
+            //     publisherSpan.appendChild(publisherGap);
 
-                console.log(publisherSpan);
-                publisherList.appendChild(publisherSpan);
-            });
+            //     console.log(publisherSpan);
+            //     publisherList.appendChild(publisherSpan);
+            // });
 
 
         } catch (err) {
