@@ -61,7 +61,7 @@ class FrontPageItem extends Component {
         return /*html*/ `
             <article class = "card-item">
                 <h1 class="headline">${(frontPageItem.title === null) ? '' : frontPageItem.title}</h1>
-                <img src="${frontPageItem.urlToImage}" alt="">
+                <div class="image-container"><img src="${frontPageItem.urlToImage}" alt=""></div>
                 <div class="byline">
                     <p class="author">${(frontPageItem.author === null) ? '' : frontPageItem.author}</p>
                     <p class="source">${(frontPageItem.source.name === null) ? '' : frontPageItem.source.name}</p>
