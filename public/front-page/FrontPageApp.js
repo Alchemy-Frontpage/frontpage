@@ -65,8 +65,14 @@ class FrontPageApp extends Component {
                 publisherCheckbox.value = publisher;
                 publisherSpan.appendChild(publisherCheckbox);
                 publisherCheckbox.addEventListener('change', event =>{
+
                     location.hash += event.target.value + '&';
                 });
+
+                // let updatedString = (str) => {
+                //     str.split('&').splice(index).join('&');
+                //     return updatedString;
+                // };
 
                 const publisherGap = document.createElement('span');
                 publisherGap.textContent = ' ';
