@@ -17,17 +17,14 @@
     position: absolute;
     bottom: 0;
     left: 0;
-}
-
-.remove-button:active, keep-button:active {
-    border: 0;
-    outline: 0;
+    outline: none;
 }
 
 .keep-button {
     position: absolute;
     bottom: 0;
     right: 18px;
+    outline: none;
 }
 
 .card-item .image-container {
@@ -40,7 +37,7 @@
 
 .byline,
 .summary {
-    padding: 10px 55px;
+    padding: 20px 55px;
     font-size: 0.85rem;
 }
 
@@ -99,24 +96,32 @@
 
     .card-item {
         right: 150px;
-        margin: 5px auto;
+        margin: 5px;
         left: 150px;
+        height: 65vh;
     }
 
     .card-item .image-container {
         width: 400px;
-        height: 300px;
+        height: auto;
     }
-
-
 
 }
 
 @media screen and (min-width: 1020px) {
 
-    .card-item .image-container {
+     .image-container {
         width: 500px;
         height: auto;
+    }
+    .card-item img {
+        height:auto;
+        width: auto;
+    }
+    .card-item {
+        height: 77vh;
+        width: 70vw;
+        margin: auto;
     }
 
     .byline,

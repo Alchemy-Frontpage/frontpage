@@ -1,6 +1,6 @@
 footer nav {
     display: flex;
- 
+    justify-content: space-evenly;
     height: 2rem;
 }
 
