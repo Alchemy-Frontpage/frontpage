@@ -62,7 +62,6 @@ class FrontPageItem extends Component {
                     <p class="author">${(frontPageItem.author === null) ? '' : frontPageItem.author}</p>
                     <p class="source">${(frontPageItem.source.name === null) ? '' : frontPageItem.source.name}</p>
                 </div>
-                <p class="summary">${(frontPageItem.description === null) ? '' : frontPageItem.description}</p>
                 <div class="buttons">
                     <button class="remove-button"><i class="fas fa-times"></i>
                     </button>
