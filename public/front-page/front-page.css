@@ -1,0 +1,79 @@
+/* header {
+    position: relative;
+    height: 40px;
+} */
+/* header.header {
+    padding: 0
+} */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+body,
+html {
+    font-family: 'News Cycle', sans-serif;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Calistoga', cursive;
+    font-size: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.byline {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+} */
+
+
+
+
+
+/*
+HTML
+
+<div>
+    <!-- header goes here -->
+    <!-- show errors: -->
+    <p class="error"></p>
+    <main class="grid-container">
+        <div class='list-container'>
+            <ul class="front-page-list">
+                <li class = "front-page-item">
+                    <h1 class="headline">${frontPageItem.title}</h1>
+                    <img src="${frontPageItem.urlToImage}" alt="">
+                    <div class="byline">
+                        <p class="author">${frontPageItem.author}</p>
+                        <p class="source">${frontPageItem.source.name}</p>
+                    </div>
+                    <p class="summary">${frontPageItem.description}</p>
+                    <div class="buttons">
+                        <button class="remove-button">Remove</button>
+                        <button class="keep-button">Keep</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+
+
+*/
