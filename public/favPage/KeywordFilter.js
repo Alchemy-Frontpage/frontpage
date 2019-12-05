@@ -14,7 +14,7 @@ class KeywordFilter extends Component {
         });
 
         clearButton.addEventListener('click', () => {
-            this.props.onClear();
+            this.props.onClear(); // very nice!
             form.reset();
         });
     }

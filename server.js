@@ -56,11 +56,11 @@ app.get('/api/news', async (req, res) => {
     try {
         let rawNews = await superagent.get('https://newsapi.org/v2/top-headlines?language=en&pageSize=100').set(`X-Api-Key`, `${NEWS_API_KEY}`);
         const news = JSON.parse(rawNews.text).articles;
-        
+
         const titleLookup = news.reduce((acc, curr) => {
             if (!acc[curr.title]) {
                 acc[curr.title] = curr;
-            } 
+            }
             return acc;
 
         }, {});
@@ -69,7 +69,7 @@ app.get('/api/news', async (req, res) => {
 
         res.status(200).json(deduplicatedTitles);
     }
-    catch (err){
+    catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
@@ -95,11 +95,11 @@ app.post('/api/favorites', async (req, res) => {
                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
                 RETURNING *
         `,
-        [user, newArticle.source.name, newArticle.author, newArticle.title, newArticle.description, newArticle.url, newArticle.urlToImage, newArticle.publishedAt, newArticle.content]
+            [user, newArticle.source.name, newArticle.author, newArticle.title, newArticle.description, newArticle.url, newArticle.urlToImage, newArticle.publishedAt, newArticle.content] // these could all be destructures from newArticle
         );
         res.status(200).json(result.rows[0]);
     }
-    catch (err){
+    catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
@@ -114,7 +114,7 @@ app.get('/api/favorites', async (req, res) => {
         `, [req.userId]);
         res.status(200).json(result.rows);
     }
-    catch (err){
+    catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
@@ -140,7 +140,7 @@ app.get('/api/favorites/filter', async (req, res) => {
         `, [req.userId, `%${searchInputToUppercase}%`, `%${req.query.search}%`]);
         res.status(200).json(result.rows);
     }
-    catch (err){
+    catch (err) {
         res.status(500).json(err);
         console.log(err);
     }

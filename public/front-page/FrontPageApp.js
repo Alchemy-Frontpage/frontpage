@@ -33,8 +33,9 @@ class FrontPageApp extends Component {
             this.state.frontPageItems = frontPageItems;
             frontPageList.update({ frontPageItems });
 
+            // cool deduping reduce!
             let publishers = frontPageItems.reduce((acc, curr) => {
-                if (!acc.includes(curr.source.id)){
+                if (!acc.includes(curr.source.id)) {
                     acc.push(curr.source.id);
                 }
                 return acc;
@@ -49,8 +50,8 @@ class FrontPageApp extends Component {
                 publisherCheckbox.value = publisher;
                 publisherSpan.appendChild(publisherCheckbox);
 
-                publisherCheckbox.addEventListener('change', event =>{
-                    if (event.target.checked){
+                publisherCheckbox.addEventListener('change', event => {
+                    if (event.target.checked) {
                         location.hash += event.target.value + '&';
                     } else {
                         let spliceThisHash = location.hash.slice(1).split('&');
@@ -67,7 +68,7 @@ class FrontPageApp extends Component {
                 const blacklist = location.hash
                     .slice(1).split('&');
                 const newItems = frontPageItems.filter(article => {
-                    if (!blacklist.includes(article.source.id)){
+                    if (!blacklist.includes(article.source.id)) {
                         return article;
                     }
                 });
@@ -86,11 +87,9 @@ class FrontPageApp extends Component {
         const filterButton = dom.querySelector('#filter-button');
         filterButton.addEventListener('click', () => {
             const filterArea = dom.querySelector('#publisher-list');
-            if (filterArea.style.display === 'block'){
-                filterArea.style.display = 'none';
-            } else {
-                filterArea.style.display = 'block';
-            }
+            filterArea.style.display = filterArea.style.display === 'block'
+                ? 'none'
+                : 'block';
         });
     }
 
