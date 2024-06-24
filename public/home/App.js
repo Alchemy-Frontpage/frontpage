@@ -30,7 +30,7 @@ class App extends Component {
         const errors = dom.querySelector('.errors');
         const signUpContainer = dom.querySelector('#signup-container');
         const signInContainer = dom.querySelector('#signin-container');
-        
+
         const signUp = new SignUp({
             onSignUp: async newUser => {
                 errors.textContent = '';
@@ -45,7 +45,7 @@ class App extends Component {
             }
         });
         signUpContainer.appendChild(signUp.renderDOM());
-        
+
         const signIn = new SignIn({
             onSignIn: async credentials => {
                 errors.textContent = '';
@@ -66,7 +66,7 @@ class App extends Component {
             signInContainer.classList.remove('no-display');
             signUpContainer.classList.add('no-display');
         });
-        
+
         const switchToSignUp = dom.querySelector('#signup-button');
         switchToSignUp.addEventListener('click', () => {
             signUpContainer.classList.remove('no-display');

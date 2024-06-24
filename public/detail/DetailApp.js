@@ -26,7 +26,7 @@ class DetailApp extends Component {
                         await deleteFavorite(id);
                         window.location = '../favPage/index.html';
                     }
-                    catch (err){
+                    catch (err) {
                         console.log(err);
                     }
                 }
